@@ -1,0 +1,432 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{algorithmic}
+\DeclareMathOperator*{\argmin}{argmin}
+\algsetup{linenosize=\small}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage[super]{nth}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{xspace}
+\usepackage{siunitx}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{soul}
+\usepackage{url}
+\usepackage{tablefootnote}
+\DeclareMathOperator{\E}{\mathbb{E}} % Expectation Symbol
+\usepackage{graphicx}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage{epsfig} % To display images
+\usepackage{amsmath,amssymb}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+% correct bad hyphenation here
+\hyphenation{}
+
+\setlength{\parskip}{0em}
+\setlength{\textfloatsep}{5pt plus 1.0pt minus 1.5pt}
+
+\begin{document}
+
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Stateless Q-learning to approach the Resource Allocation Problem in Wireless Networks}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{
+	\IEEEauthorblockN{Francesc Wilhelmi}
+	\IEEEauthorblockA{Department of Information\\ and Communication Technologies\\
+		Universitat Pompeu Fabra (UPF)\\
+		Barcelona\\
+		Email: francisco.wilhelmi@upf.edu}
+\and
+	\IEEEauthorblockN{Boris Bellalta}
+	\IEEEauthorblockA{Department of Information\\ and Communication Technologies\\
+		Universitat Pompeu Fabra (UPF)\\
+		Barcelona}
+\and
+	\IEEEauthorblockN{Cristina Cano}
+	\IEEEauthorblockA{Internet Interdisciplinary\\ Institute (IN3)\\
+		Universitat Oberta de Catalunya (UOC)\\
+		Barcelona}
+	}
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+%% Text of abstract
+Reinforcement Learning turns out to be a promising tool to solve the resource allocation problem in Wireless Networks (WNs) by empowering independent devices to learn which are the best configurations to enhance their own performance. In this work we present a practical implementation of Stateless Q-learning to enhance spatial reuse in WNs from a decentralized perspective. In particular, we show how WNs learn which are the best actions to be played in order to counter act the environment and to enhance their own performance in terms of throughput. In addition, we show how this process provides a fair distribution of the resources to the learning WNs. The theoretical basis of this work is supported by a set of simulations for proving the effectiveness and feasibility of the presented algorithms in a such problem.\footnote{The code used for simulations can be found at https://github.com/fwilhelmi/Multi-Agent-Reinforcement-Learning-Methods-to-Minimize-OBSS-Interferences.git}
+\end{abstract}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%  I. INTRODUCTION %%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Introduction}
+	% no \IEEEPARstart
+	Massive Wireless Networks (WNs) deployments entail several coexistence problem that harm the performance experienced by many of the devices. It is very common to find overlapping WNs that squander resources such as the available bandwidth, because of lack of organization and/or synchronization, and disregarding towards the neighbours' configurations. In fact, the default power level of devices in a WN is typically set to the maximum, regardless of the distance between nodes and the channel occupancy \cite{smith2015dynamic}. In addition, the spectrum variability in wireless networks requires to present on-line mechanisms for constantly allocating resources with the aim of maximizing the area throughput. We find in decentralized learning a consistent solution to deal with many coexistence issues by empowering independent devices to self-adjust their parameters in order to compete in such overlapping environments. For that, it is important to briefly introduce the concept of Nash Equilibrium, which is key for achieving a steady solution in the resource allocation problem for WNs if approaching it from a decentralized way. In Game Theory, a Nash equilibrium is a set of individual strategies that maximize the profits of each player in a non-cooperative game, regardless of the others' strategy. Formally, a set of best player actions $a^* = (a_1^*, ..., a_n^*) \in A$ leads to a Nash Equilibrium if $a_i^* \in B_i(a_{-i}^*), \forall i \in N$, where $B_i(a_{-i})$ is the best response given by each player against the others actions ($a_{-i}$).
+	
+	The recent literature shows an upward trend for dynamically adjusting the frequency channel or the transmit power to improve the spatial reuse in neighbouring Wireless Networks \cite{riihijarvi2005frequency, mhatre2007interference}. Regarding decentralized learning in WNs, Q-learning has been previously used for dynamic channel assignment in mobile networks in \cite{nie1999} or for automatic channel selection in Femto Cell Networks in \cite{bennis2010q}. In any of the cases it is provided an overview of the effects of applying Reinforcement Learning in decentralized environments at which selfish strategies are being applied, regardless of ruining the others' configurations. In addition, a performance evaluation when varying several parameters intrinsic to the learning algorithms is not provided, which results to be helpful for understanding the behaviour of the WNs when interacting among them. 
+
+	The remaining of this document is structured as follows: in Section \ref{section:qlearning} it is briefly introduced the Q-learning variation to properly suit our purpose, as well as its practical implementation for the resource allocation problem in WNs. Then, in Section \ref{section:system_model} it is presented the simulations scenario, and the simulation results are shown in Section \ref{section:performance_evaluation}. Finally, conclusions and future work are provided in Section \ref{section:conclusions}. 
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%  II. DECENTRALIZED LEARNING ALGORITHMS %%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Decentralized Stateless Q-learning for enhancing Spatial Reuse in an OBSS}
+	\label{section:qlearning}
+	
+	Q-learning \cite{sutton1998reinforcement, watkins1992q} is a RL technique at which an agent learns the optimal policy to be followed in an environment defined by a set of possible states and actions. In particular, an agent maintains an estimate of the expected long-term discounted reward for each state-action pair, and selects actions with the aim of maximizing it:
+	
+	\[ \text{V}^\pi(s) = \lim_{N \rightarrow \infty} E\Big(\sum_{t=1}^{N} r_{R_t^\pi (s)}\Big)\]
+	
+	Where $\text{V}^\pi(s)$ is the obtained reward at time $t$ after starting from state $s$ and by using policy $\pi$. Since the reward may easily get unbounded, it is used a discount factor parameter ($\gamma < 1$). The optimal policy $\pi^*$ that maximizes the total expected reward is obtained by using the \textit{Bellman's Optimality Equation} \cite{sutton1998reinforcement}:
+	
+	\begin{equation}
+	Q^*(s,a) = E \Big\{r_{t+1} + \gamma \text{max}_{a'} Q^*(s_{t+1,a} | s_t = s, a_t = a\Big\}
+	\end{equation}
+	
+	Henceforth, the following update rule is used in Q-learning for learning the optimal policy given each pair of states and actions: 
+	
+	\[ Q(s,a)\leftarrow (1-\alpha) \cdot Q(s,a)+ \alpha \cdot (r+\gamma \cdot \text{max}_{a'} Q(t,a')) \]
+	
+	Where $\alpha$ is the learning rate, $r$ is the reward, $\gamma$ is the discount factor, and $\text{max}_{a'} Q(t,a')$ is the best possible value seen so far. The optimal solution is achieved with probability 1 if $\sum_{i=0}^{\infty} \alpha_s = \infty$ and $\sum_{i=0}^{\infty} \alpha_s^2 < \infty$:
+	
+	\[ \lim_{i \rightarrow \infty} Q(s,a) = Q^*(s,a)\]
+	
+	To model the spatial reuse problem by using Q-learning we need to consider a stateless variation, as well as modelling states in wireless networks can become really complex in order not to generate overfitting. Thus, each WN is considered to be an agent implementing Q-learning through an $\varepsilon$-greedy action-selection strategy, so that actions $a \in \mathcal{A}$ correspond to all the possible configurations that can be chosen with respect to the channel and transmit power. The implementation details are described in Algorithm \ref{alg:qlearning}.
+	
+	\begin{algorithm}
+		\SetKwInOut{Input}{Input}
+		\SetKwInOut{Output}{Output}
+		
+		Function Q-learning $(\text{SINR},\mathcal{A})$\;
+		\Input{SINR: Signal-to-Interference-plus-Noise Ratio sensed at the STA\\$\mathcal{A}$: set of possible actions}
+		\Output{$\overline{\Gamma}$: Mean throughput experienced in the WN}
+		initialize: $t=0$, $Q(a_i) = 0, \forall a_i \in \mathcal{A}$\\
+		\While{active}
+		{
+			Select $a_i$  $\begin{cases}
+			\underset{i=1,...,K}{\text{argmax }} Q(a_i), & \text{with prob } 1 - \varepsilon\\
+			i \sim \mathcal{U}(1, K),, & \text{otherwise}
+			\end{cases}$\\
+			Observe reward $r_{a_i} = \frac{\Gamma_{a_i}}{\Gamma^*}$ \\
+			$Q(a_i) \leftarrow Q(a_i) + \alpha \cdot (r_{a_i} + \gamma \cdot max(Q(:)) - Q(a_i))$\\
+			$\varepsilon_t \leftarrow \varepsilon_0 / \sqrt{t}$ \\	
+			$ t \leftarrow t + 1$
+		}
+		\caption{Implementation of Stateless Q-learning for resource allocation in WNs}
+		\label{alg:qlearning}
+	\end{algorithm}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%% III. SYSTEM MODEL %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{System model}
+	\label{section:system_model}
+	
+	To explore the effects of applying Stateless Q-learning in neighbouring WNs, we have built a simulation scenario at which several WNs are placed in a 3D-map (further described in Section \ref{section:simulation_parameters}, each one containing an Access Point (AP) that transmits to a single Station (STA), which serves for studying the interference generated by other WNs and the effects of modifying the available parameters.
+	
+	%------------------------
+	% Channel modelling
+	%------------------------
+	\subsection{Channel modelling}
+	\label{section:channel_modelling}
+	
+	Path-loss and shadowing are modelled by the following log-distance model:
+	
+	\begin{scriptsize}
+		\begin{equation}
+		\text{PL}_{i,j} = \text{P}_{tx_i}-\text{P}_{rx_j} = \text{PL}_0 + 10 \cdot \alpha \cdot \log_{10}(d_{i,j}) + \text{G}_s + \frac{d_{i,j}}{d_{obs}} \text{G}_o
+		\end{equation}
+	\end{scriptsize}
+	
+	$\text{P}_{tx_i}$ is the power in dBm transmitted by WN $w_i$, $\text{P}_{rx_j}$ is the power in dBm received at WN $w_j$, $\text{PL}_0$ is the path-loss factor in dB, $d$ is the distance between the transmitter and the receiver in m, $\text{G}_s$ is the shadowing loss in dB, and $\text{G}_o$ is the obstacles loss in dB. Note that we also include the factor $d_{obs}$, which represents the obstacles frequency in meters. In addition, it is considered to be adjacent co-channel interferences, so that signal introduced in a specific channel is affecting the others to a lesser extent. In particular, we consider a virtual mask that reduces 20 dBm the power of the signal for each channel separation (e.g., channel $i$ will be affected by the power sensed in channel $i+2$ minus $2\times20$ dBm).
+	
+	%------------------------
+	% Throughput calculation
+	%------------------------
+	\subsection{Throughput calculation}
+	\label{section:throughput_calculation}
+	
+	To calculate the throughput experienced by each WN $w_i$ it is considered the total interference sensed, which in combination with the received power allows computing the Shannon Capacity \cite{shannon2001mathematical} (Equation \ref{eq:shannon_capacity}). With that we are showing the worst-case scenario in terms of sensed interference. 
+	
+	\begin{equation}
+	\Gamma_i = B \cdot \log_{2}(1 + \text{SINR}_{w_i})
+	\label{eq:shannon_capacity}
+	\end{equation}
+	
+	Where $B$ is the available bandwidth (fixed at 20 MHz) and the experienced SINR is given by Equation \ref{eq:sinr}.
+	
+	\begin{equation}
+	\text{SINR}_{{w_i},t} = \frac{\text{P}_{{w_i},t}}{\text{I}_{{w_i},t}+\text{N}} \: [dB]
+	\label{eq:sinr}
+	\end{equation}
+	
+	$\text{P}_{{w_i},t}$ and $\text{I}_{{w_i},t}$ are the received power and the sum of the noticed interferences at WN $w_i$ at time $t$, respectively, and N is the floor noise power, which is fixed at $-100$ dBm. Regarding the traffic model, it is only assumed to be downlink transmissions in saturation regime, i.e. only the APs are able to transmit to the STAs in full buffer mode (data transmission is kept continuous over the time), so the interferences received proceed from all the APs of the other coexisting WNs $w_{j \neq i} \in \mathcal{W} $, and it is contemplated the sum of all the power sensed at $w_i$.
+	
+	%------------------------
+	% RL Considerations
+	%------------------------
+	\subsection{Reinforcement Learning Considerations}
+	\label{section:rl_considerations}
+	
+	During the learning process it is assumed that WNs select actions sequentially, so that at each learning iteration, every agent is taking an action in an ordered way. In particular, the order at which WNs make an action at each iteration is randomly selected at the beginning of it in order to avoid unfair behaviours. In addition to the aforementioned	 behaviour, a very important metric to take into account is the generated reward, which is an indicator used by all the action-selection strategies for evaluating a given action according to the past experience. To provide a meaningful comparison of the performance of each algorithm, the generated reward is considered to be the same for all the mechanisms, which depends on the observed throughput (refer to Equation \ref{eq:reward_generation})\footnote{Note that with this model the learned policies are acceptable for a certain time period, since the environment may completely change as nodes enter or leave the system}.
+
+	\begin{equation}
+		R_i = {\frac{\Gamma_i}{{\Gamma_i^*}}}
+		\label{eq:reward_generation}
+	\end{equation}
+	
+	Where $\Gamma_i$ is the observed throughput by $\text{WN}_i$, and $\Gamma_i^*$ is the maximum achievable throughput in $\text{WN}_i$, which is considered to occur if $\text{WN}_i$ transmits at the maximum power and does not suffer any interference. In particular $\Gamma_i^* = B \cdot \log_{2}(1 + \text{SNR}_{w_i})$, which only depends on the distance between the AP and the STA, as any interference is sensed and the maximum transmit power is used.
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%% IV. SIMULATION %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Performance Evaluation}
+	\label{section:performance_evaluation}
+	
+	In this Section we first introduce the simulation parameters and explain the different considerations taken into account for the experiments. Then, we evaluate the performance of Stateless Q-learning at being applied in a competitive scenario at which the 4 WNs presented in Section \ref{section:system_model} attempt to maximize their own throughput. To provide a further understanding on the behaviour shown by the agents, we are using a fairness measure in addition to the network throughput. In particular, we use the Jain's Fairness Index\cite{jain1999throughput} to measure how fair a distribution of assets is, which is given by $J(x_1,x_2,...,x_n)=\frac{(\sum_{n}^{i=1}x_i)^2}{n\sum_{n}^{i=1}x_i^2}$. 
+	
+	%------------------------
+	% Simulation Parameters
+	%------------------------
+	\subsection{Simulation Parameters}
+	\label{section:simulation_parameters}
+	
+	According to the TGax\cite{tgax_simulation_scenario}, a typical high-density scenario for residential buildings contains $0.0033 AP/m^3$. Thus, we propose a map scenario with dimensions $10\times5\times10 \text{m}$ containing several neighbouring WNs. On the first hand, we are using a fixed grid topology formed by 4 WNs which STAs are placed at the maximum possible distance from the other networks. This fixed scenario will let us studying Stateless Q-learning in a controlled environment, providing a starting point to further generalizations in terms of network density and topology. On the other hand, we are using the knowledge extracted from the first scenario at WNs containing 2, 4, 6 and 8 WNs\footnote{The STAs in this case are going to be randomly placed at a distance of $\sqrt{2}$ m from their AP (1 m in the $x$ and $y$ dimensions).}, which are being randomly placed around the same dimensional space. This will allow us to inspect the learning behaviour at different topologies and densities. At both types of scenarios it is considered to provide an amount of channels equal to half of the number of coexisting WNs, so that we can study a challenging situation regarding the spatial reuse. Table \ref{tbl:simulation_parameters} details the parameters and models taken into account for simulations.
+	
+	\begin{table}[h!]
+		\centering
+		\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Parameter}             & \textbf{Value}                      \\ \hline
+			Map size (m)                    & $10\times5\times10$                  \\ \hline
+			Number of coexistent WNs                    & \{2, 4, 6 and 8\}  \\ \hline
+			APs per WN                    & 1                                     \\ \hline
+			STAs per WN                   & 1                                     \\ \hline
+			Distance AP-STA (m)     & $\sqrt{2}$                         \\ \hline
+			Network Topology              & Grid, Random\\ \hline
+			Number of Channels              & \{1, 2, 3 and 4\}                                   \\ \hline
+			Channel Bandwidth (MHz)         & 20                                    \\ \hline
+			Initial channel selection model & Randomly distributed             		\\ \hline
+			TPC Values (dBm)                & \{5, 10, 15, 20\}                      \\ \hline
+			Path Loss  Model                & $\text{PL}_{i,j} = \text{PL}_0 + 10 \alpha log_{10}(d_{i,j}) + \text{G}_s + \frac{d_{i,j}}{f_w} \text{G}_o$ \\ \hline
+			$\text{PL}_0$                   & 5
+			\\ \hline
+			$\text{G}_s$                   & Normally distributed RV with mean 9.5                          	
+			\\ \hline
+			$\text{G}_o$                  & Uniformly distributed RV with mean 30
+			\\ \hline
+			$f_w$  (meters to find a wall)                 & 5                        
+			\\ \hline
+			Noise level (dBm)               & -100                                  \\ \hline
+			Traffic model                   & Full buffer (downlink)             \\ \hline           
+			Number of learning iterations                & \{1000, 10000\}							\\ \hline   
+			Number of repetitions (to take the average)                  & 100						
+			\\ \hline
+		\end{tabular}
+		}
+		\caption{Simulation parameters}
+		\label{tbl:simulation_parameters}
+	\end{table}
+	
+	%------------------------
+	% Optimality study
+	%------------------------
+	\subsection{Optimal solution}
+	\label{section:optimal_solution}
+		
+	Before exploring the proposed learning mechanisms for enhancing the network conditions in the OBSS, we devise the optimal solutions that maximize i) the aggregate throughput and ii) the proportional fairness\footnote{The proportional is fairness is computed as the logarithmic sum of the throughputs experienced by each WN: $\sum_{i \in \mathcal{W}} \log(\Gamma_i)$}, which are shown in Table \ref{tbl:optimal_configurations}. Note that there are two or more analogous solutions, since the considered scenario is symmetric (the analogous configuration is shown in parentheses). 
+
+	\begin{scriptsize}
+		\begin{table}[]
+			\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{WN id} & \textbf{\begin{tabular}[c]{@{}c@{}}Action to maximize the \\ Network Throughput\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Action to maximize the\\ Proportional Fairness\end{tabular}} \\ \hline
+1 & 1 (2) & 7 (8) \\ \hline
+2 & 1 (2) & 8 (7) \\ \hline
+3 & 7 (8) & 7 (8) \\ \hline
+4 & 8 (7) & 8 (7) \\ \hline
+\end{tabular}
+			
+			\caption{Optimal configurations to achieve the maximum network throughput and proportional fairness, which grant 1124 Mbps and 891 Mbps, respectively. In parenthesis it is shown the analogous solution that provides the optimal aforementioned metrics. Actions indexes from 1 to 8 refer to configurations \{1,5\}, \{2,5\}, \{1,10\}, \{2,10\}, \{1,15\}, \{2,15\},\{1,20\} and \{2,20\}, respectively.}
+			\label{tbl:optimal_configurations}
+		\end{table}
+	\end{scriptsize}
+	
+	Regarding the network throughput, the best possible result is 1124 Mbps, and as it can be observed, there are two WNs (1 and 2) that sacrifice themselves in order to let the other two obtain a very high throughput that enhances the aggregated one. Regarding the proportional fairness, the best configuration grants a network throughput of 891 Mbps, which is quite lower than for the other case, but allows experiencing a Jain's fairness coefficient of 1. In this case, frequency reuse is properly done (closer WNs choose different channels), but power is kept at the maximum level for each WN due to their greedy behaviour.
+	
+	%------------------------
+	% Tuning parameters
+	%------------------------
+	\subsection{Input Parameters Analysis}
+	\label{section:practical_analysis}
+	
+	In Q-learning we have three modifiable parameters, which are $\alpha$ (learning rate), $\gamma$ (discount factor) and $\epsilon_0$ (initial exploration coefficient). In Figure \ref{fig:ql_alpha_gamma_epsilon_evaluation} it is shown the mean network throughput achieved for each of the parameters combinations. It can be observed that the best results with respect to the aggregate throughput and variability of the results are achieved when $\alpha = 1$, $\gamma = 0.95$ and $\varepsilon_0 = 1$, which means that the immediate reward of a given action must be completely taken into account, as well as the difference between the pay-off offered by the best action and the current one. In addition, exploration must be highly boosted at the beginning.
+	
+	\begin{figure}[h!]
+		\centering
+		\epsfig{file=images/ql_tuning_params_fixed_map_last_5000_iterations.pdf, width=6cm}
+		\caption{Mean network throughput obtained for each $\varepsilon_0$ value in Stateless Q-learning}
+		\label{fig:ql_alpha_gamma_epsilon_evaluation}
+	\end{figure}
+
+	From Figure \ref{fig:ql_alpha_gamma_epsilon_evaluation} it can be appreciated a relationship between the learning rate ($\alpha$) and the discount factor ($\gamma$), so in Figure \ref{fig:ql_alpha_vs_gamma} it is further analysed the average network throughput obtained for each $\alpha$-$\gamma$ pair. It can be observed that $\alpha$ must be higher that $\gamma$ for obtaining the configuration that most enhances the aggregate throughput. Coincidentally, the variability results to be much lower in the maximum performance cases, which also favours the behaviour observed at the WN. Apart from the better performance values, we notice a peak in the standard deviation of the aggregate throughput when $\gamma$ is very close to $\alpha$, but still lower than it.  
+	
+	\begin{figure}[t!]
+		\centering
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/alpha_vs_gamma_avg_tpt_sqrt_epsilon}
+			\caption{Network throughput}
+			\label{fig:alpha_vs_gamma_avg_tpt_sqrt_epsilon}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/alpha_vs_gamma_std_sqrt_epsilon}
+			\caption{Standard deviation}
+			\label{fig:alpha_vs_gamma_std_sqrt_epsilon}
+		\end{subfigure}
+		\caption{Evaluation of $\alpha$ and $\gamma$ in Stateless Q-learning}
+		\label{fig:ql_alpha_vs_gamma}
+	\end{figure}
+	
+	Now, in order to extensively study the behaviour of the competing WNs when applying Stateless Q-learning, in Figure \ref{fig:ql_tpt_evolution} we plot both individual and network throughput evolution during 10000 iterations of a single simulation. To do so, we set the parameters as to provide the better performance in terms of network throughput and variability, which are $\alpha = 1$, $\gamma = 0.95$ and $\varepsilon_0 = 1$. As it is shown, all the WNs are constantly changing their actions due to their greedy behaviour, as well as the weight assigned to each action is affected by the others' actions. It can also be observed that the fluctuation in the throughput decays as the number of iterations increases, which is caused by the exploration decrease. Regarding the fairness experienced, in Figure \ref{fig:ql_avg_individual} can be observed that all the WNs enjoy practically the same throughput during the simulation.
+		
+	\begin{figure}[h!]
+		\centering
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/ql_individual_tpt_evolution}
+			\caption{Individual Throughput}
+			\label{fig:ql_individual_tpt_evolution}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/ql_agg_tpt_evolution}
+			\caption{Network Throughput}
+			\label{fig:ql_agg_tpt_evolution}
+		\end{subfigure}
+		\caption{Throughput evolution for 10000 iterations}
+		\label{fig:ql_tpt_evolution}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\epsfig{file=images/ql_5000_last_iter_1.eps, width=5cm}
+		\caption{Average throughput experienced per WN during the last 5000 of 10000 iterations of Stateless Q-learning}
+		\label{fig:ql_avg_individual}
+	\end{figure}
+
+	The network throughput experienced by applying Stateless Q-learning (902,739 Mbps) represents the 80,29\% of the throughput granted by the configuration that maximizes it, and significantly enhances the experienced fairness by a 62,74\% (0,9358). Regarding the configuration that grants the best proportional fairness, by using Stateless Q-learning we reach the 93,58\% of its fairness but even increase the experienced network throughput by 1,27\%.
+%
+%	In Table \ref{tbl:performance_comparison_optimal_confs} it is shown the performance of Stateless Q-learning with respect to the optimal configurations that maximize the Network Throughput and the Proportional Fairness. It is also compared with the static and random cases.
+%	
+%	\begin{table}[t!]
+%		\centering
+%		\resizebox{\columnwidth}{!}{%
+%			\begin{tabular}{|c|c|c|c|c|c|c|}
+%				\hline
+%				\textbf{Approach} & 
+%				\textbf{\begin{tabular}[c]{@{}c@{}}$\hat{\Gamma}$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}$\mathcal{J}(\Gamma)$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}$\hat{\Gamma} / \Gamma_{agg}^*$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}$\hat{\Gamma} / \Gamma_{pf}^*$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}$\mathcal{J}(\Gamma) / \mathcal{J}(\Gamma_{agg}^*)$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}$\mathcal{J}(\Gamma) / \mathcal{J}(\Gamma_{pf}^*)$\end{tabular}} \\ \hline
+%				QL & 902,379 Mbps & 0,9358 & 0,8029 & 1,0127 & 1,6274 & 0,9358 \\ \hline
+%			\end{tabular}
+%		}
+%		\caption{Average performance achieved and percentage with respect to the optimal configurations in terms of aggregate throughput and proportional fairness. $\hat{\Gamma}$ is the aggregated throughput obtained by each approach ($\sum_{w \in W} \Gamma_w$). $\mathcal{J}(\Gamma)$ is the Jain's Fairness Index (JFI) obtained from the individual throughputs experienced at each WN ($\Gamma$). $\Gamma_{agg}^*$/$\Gamma_{pf}^*$ and $\Gamma_{agg}^*$/$\Gamma_{pf}^*$ are the aggregated throughput and JFI obtained from the configurations that maximize the aggregated throughput and the proportional fairness, respectively.}
+%		\label{tbl:performance_comparison_optimal_confs}
+%	\end{table}
+		
+	Now, we focus on the probability of choosing a given action at each WN (shown in Figure \ref{fig:probability_distribution}), and we notice that all of them have two preferred actions, at which it is used the maximum transmit power. In fact, the highest transition probabilities consist in staying at the same state (e.g. for WN1, the probability of staying at state \{Channel = 1, TPC = 20\} is 0.703). Moreover, it can be appreciated that the channel reuse is optimal, i.e., if two WNs occupy channel 1, the others choose channel 2. In case one of the WNs explores the action with highest power at the other channel, everything changes, since the others need to readjust themselves in order to preserve the optimal channel reuse that enhances their own throughput. This explains why the second favourite action for everyone is the other that uses the maximum transmit power.
+	
+	\begin{figure}[h!]
+		\centering
+		\epsfig{file=images/ql_actions_distribution.eps, width=5cm}
+		\caption{Actions probability distribution for each WN at the end of a 10000 iterations simulation.}
+		\label{fig:probability_distribution}
+	\end{figure}
+	
+	Finally, in order to compare the performance obtained from applying Stateless Q-learning in a decentralized way, we simulate the average network throughput and fairness resulting from a random approach at which a new action is selected randomly at each iteration.
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/ql_comparison_agg_tpt}
+			\caption{Network Throughput}
+			\label{fig:ql_tpt_comparison}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.22\textwidth}
+			\includegraphics[width=\textwidth]{images/ql_comparison_fairness}
+			\caption{Fairness}
+			\label{fig:ql_fairness_comparison}
+		\end{subfigure}
+		\caption{Performance evaluation of Stateless Q-learning and random action-selection for different densities and topologies (information of the last 5000 of 10000 iterations)}
+		\label{fig:ql_comparison}
+	\end{figure}
+				
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%  V. CONCLUSIONS  %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Conclusions }
+	\label{section:conclusions}
+	
+	Decentralized learning allows improving the spatial reuse at dense Wireless Networks by enhancing both network throughput and fairness as a result of maximizing the exploitation of the best-response actions. However, the competitiveness of the presented environment involves the non-existence of a Nash Equilibrium. Thus, a high variability in the experienced throughput is noticed due to the frequency at which configurations are changed, as well as the reward generated by each action changes according to the opponents actions. This variability can have negative effects towards the nodes performance. On the one hand, the propagated effects into a higher level of communication can have severe consequence, as a high throughput fluctuation may entail behavioural anomalies in protocols such as TCP (Transmission Control Protocol). 
+	
+	By using Stateless Q-learning we have studied the importance of the exploration-exploitations trade-off and how past information must be considered, which has allowed improving the network throughput and the fairness with respect to a random action-selection approach at the introduced scenario. We have seen that Stateless Q-learning allows finding the best configurations that maximize the network throughput, which attempt to counter act the actions of the neighbouring WNs.
+	  
+	\begin{thebibliography}{20}
+		
+	\bibitem{smith2015dynamic} Smith, G. (2015). Dynamic sensitivity control-v2. IEEE, 802, 802-11.
+	
+	\bibitem{riihijarvi2005frequency} Riihijarvi, J., Petrova, M., \& Mahonen, P. (2005, January). Frequency allocation for WLANs using graph colouring techniques. In Wireless On-demand Network Systems and Services, 2005. WONS 2005. Second Annual Conference on (pp. 216-222). IEEE.
+	
+	\bibitem{mhatre2007interference} Mhatre, V. P., Papagiannaki, K., \& Baccelli, F. (2007, May). Interference mitigation through power control in high density 802.11 WLANs. In INFOCOM 2007. 26th IEEE International Conference on Computer Communications. IEEE (pp. 535-543). IEEE.
+	
+	\bibitem{nie1999} Nie, J., \& Haykin, S. (1999). A Q-learning-based dynamic channel assignment technique for mobile communication systems. IEEE Transactions on Vehicular Technology, 48(5), 1676-1687.
+	
+	\bibitem{bennis2010q} Bennis, M., \& Niyato, D. (2010, December). A Q-learning based approach to interference avoidance in self-organized femtocell networks. In GLOBECOM Workshops (GC Wkshps), 2010 IEEE (pp. 706-710). IEEE.
+	
+	\bibitem{sutton1998reinforcement} Sutton, R. S., \& Barto, A. G. (1998). Reinforcement learning: An introduction (Vol. 1, No. 1). Cambridge: MIT press.
+	
+	\bibitem{watkins1992q} Watkins, C. J., \& Dayan, P. (1992). Q-learning. Machine learning, 8(3-4), 279-292.
+	
+	\bibitem{shannon2001mathematical} Shannon, C. E. (2001). A mathematical theory of communication. ACM SIGMOBILE Mobile Computing and Communications Review, 5(1), 3-55.
+	
+	\bibitem{jain1999throughput} Jain, R., Durresi, A., \& Babic, G. (1999). Throughput fairness index: An explanation (pp. 99-0045). Tech. rep., Department of CIS, The Ohio State University.
+	
+	\bibitem{tgax_simulation_scenario} Jain, Raj and Durresi, Arjan and Babic, Gojko. IEEE 802.11 tgax simulation scenarios. IEEE 802.11ax, IEEE 802.11-14/0621r3
+		
+	\end{thebibliography}
+	
+	
+\end{document}
