@@ -6,5 +6,6 @@
 ##   Anders Jonsson, Artificial Intelligence and Machine Learning Research Group (AIML-UPF), Universitat Pompeu Fabra (UPF)
 
 This repository contains the material for the article submitted to IEEE PIMRC'17. It contains:
-    * Matlab code of the performed experiments: the experiment files are prepared to be executed with the information used in the article.
+    
+    * Matlab code of the performed experiments: the experiment files are prepared to be executed with the information used in the article (refer to folder /Code/Experiments/).
     * LaTeX files for the article
