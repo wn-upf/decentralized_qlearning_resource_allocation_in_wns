@@ -141,30 +141,32 @@ function [tpt_experienced_by_WLAN, Qval] = QlearningMethod(wlan, MAX_CONVERGENCE
     
     if printInfo
     
-        figure('pos',[450 400 500 350])
+        % Throughput experienced by each WLAN for each EXP3 iteration
+        figure('pos',[1 10 320 470])
         axes;
-        axis([1 20 30 70]);  
-
+        axis([1 20 30 70]);
         % Print the preferred action per wlan
         for i=1:n_WLANs      
 
-            times_arm_is_seleceted(i, :)/MAX_CONVERGENCE_TIME
+            times_arm_is_seleceted(i, :)/MAX_CONVERGENCE_TIME;
 
             [~, ix] = max(Qval{i});
             [a, ~, c] = val2indexes(possible_actions(ix), size(actions_ch,2), size(actions_cca,2), size(actions_tpc,2));  
             disp(['   * WN' num2str(i) ':'])
             disp(['       - Channel:' num2str(a)])
             disp(['       - TPC:' num2str(actions_tpc(c))])
-            subplot(2,2,i)
-            bar(1:K, times_arm_is_seleceted(i, :)/MAX_CONVERGENCE_TIME);
+            h(i) = subplot(2, 2, i);
+            b = bar(1:K, times_arm_is_seleceted(i, :)/MAX_CONVERGENCE_TIME);
             hold on
-            xlabel(['Action index (WN' num2str(i) ')'], 'fontsize', 16)
+            set(gca, 'FontSize', 22, 'Fontname', 'Timesnewroman') 
             axis([0 9 0 1])
-            xticks(1:8)
-            xticklabels(1:8)
-            set(gca, 'FontSize', 22)
-            % xticklabels({'ch=1/tpc=5','ch=2/tpc=5','ch=1/tpc=10','ch=2/tpc=10','ch=1/tpc=15','ch=2/tpc=15','ch=1/tpc=20','ch=2/tpc=20'})
-
+            if i == 4
+                xticks(1:8)
+                xticklabels(1:8)
+                xlabel('Action Index', 'FontSize', 28, 'Fontname', 'Timesnewroman')
+                ylabel('Probability', 'FontSize', 28, 'Fontname', 'Timesnewroman')
+            end
+                       
             a = transitions_counter(i,:);
             % Max value
             [val1, ix1] = max(a);

@@ -5,7 +5,6 @@
 %   Cristina Cano, Wireless Networks Research Group (WINE-UOC), Universitat Oberta de Catalunya (UOC)
 %   Anders Jonsson, Artificial Intelligence and Machine Learning Research Group (AIML-UPF), Universitat Pompeu Fabra (UPF)
 
-
 % EXPERIMENT EXPLANATION:
 % By using a simple grid of 4 WLANs sharing 2 channels, we want to test the
 % Q-learning method if using different numbers of iterations. We fix alpha,
@@ -57,10 +56,10 @@ K = size(possible_actions,2);
 possible_comb = allcomb(possible_actions,possible_actions,possible_actions,possible_actions);
 
 % Q-learning parameters
-gamma = .95;            % Discount rate
+gamma = .05;            % Discount rate
 initial_epsilon = 1;    % Initial Exploration coefficient
 updateMode = 1;         % 0: epsilon = initial_epsilon / t ; 1: epsilon = epsilon / sqrt(t)
-alpha  = 1;             % Learning rate
+alpha  = .1;             % Learning rate
 
 printInfo = 1;          % print info when calling QlearningMethod
 
@@ -129,4 +128,4 @@ errorbar(mean_tpt_per_wlan,std_per_wlan, '.r');
 axis([0 5 0 350])
 
 
-save('ql_exp2_workspace.mat')
+save('ql_exp2_3_workspace.mat')
