@@ -22,6 +22,12 @@ addpath(genpath('Reinforcement Learning Methods/'));
 addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
 addpath(genpath('Auxiliary Methods/'));
 
+disp('****************************************************************************************');
+disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
+disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi                          *');
+disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs *');
+disp('****************************************************************************************');
+
 disp('-----------------------')
 disp('Q-learning: Throughput Evolution')
 disp('-----------------------')
@@ -84,12 +90,13 @@ for i = 1:n_WLANs
     tpt_per_iteration = tpt_evolution_per_wlan_ql(MIN_SAMPLE_CONSIDER:MAX_CONVERGENCE_TIME, i);
     plot(MIN_SAMPLE_CONSIDER:MAX_CONVERGENCE_TIME, tpt_per_iteration);
     title(['WN ' num2str(i)]);
-    set(gca, 'FontSize', 18)
+    set(gca, 'FontSize', 22)
     axis([MIN_SAMPLE_CONSIDER-1 MAX_CONVERGENCE_TIME 0 1.1 * max(tpt_per_iteration)])
 end
 %xlabel('Q-learning Iteration', 'fontsize', 24)
 ylabel('Throughput experienced (Mbps)', 'fontsize', 24)
-    
+set(gca, 'fontname', 'timesnewroman')
+
 % Aggregated throughput experienced for each EXP3 iteration
 figure('pos',[450 400 500 350])
 axes;
@@ -100,6 +107,7 @@ set(gca, 'FontSize', 22)
 xlabel('Q-learning Iteration', 'fontsize', 24)
 ylabel('Network Throughput (Mbps)', 'fontsize', 24)
 axis([MIN_SAMPLE_CONSIDER-1 MAX_CONVERGENCE_TIME 0 1.1 * max(agg_tpt_per_iteration)])
+set(gca, 'fontname', 'timesnewroman')
 
 % Proportional fairness experienced for each EXP3 iteration
 figure('pos',[450 400 500 350])
@@ -111,6 +119,7 @@ set(gca, 'FontSize', 22)
 xlabel('Q-learning Iteration', 'fontsize', 24)
 ylabel('Proportional Fairness', 'fontsize', 24)
 axis([MIN_SAMPLE_CONSIDER-1 MAX_CONVERGENCE_TIME 0 1.1 * max(proprotional_fairness_per_iteration)])
+set(gca, 'fontname', 'timesnewroman')
 
 % Average tpt experienced per WLAN
 MIN_SAMPLE_CONSIDER = MAX_CONVERGENCE_TIME/2 + 1;
@@ -126,6 +135,6 @@ ylabel('Mean throughput (Mbps)', 'fontsize', 24)
 hold on
 errorbar(mean_tpt_per_wlan,std_per_wlan, '.r');
 axis([0 5 0 350])
-
+set(gca, 'fontname', 'timesnewroman')
 
 save('ql_exp2_2_workspace.mat')

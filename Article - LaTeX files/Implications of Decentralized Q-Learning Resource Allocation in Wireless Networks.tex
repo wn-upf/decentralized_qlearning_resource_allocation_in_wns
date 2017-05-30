@@ -109,9 +109,9 @@
 	
 	Path-loss and shadowing effects are modelled by the following log-distance model for indoor communications:	
 	\begin{align}
-	\text{PL}_{i,j} = \text{P}_{{\rm tx},i} - \text{P}_{{\rm rx},j} & = \nonumber \\ = \text{PL}_0 + & 10  \alpha  \log_{10}(d_{i,j}) + \text{G}_{{\rm s}} + \frac{d_{i,j}}{d_{{\rm obs}}} \text{G}_{{\rm o}}, \nonumber
+	\text{PL}_{i,j} &= \text{P}_{{\rm tx},i} - \text{P}_{{\rm rx},j} = \nonumber \\ & = \text{PL}_0 + 10  \alpha_{\rm PL}  \log_{10}(d_{i,j}) + \text{G}_{{\rm s}} + \frac{d_{i,j}}{d_{{\rm obs}}} \text{G}_{{\rm o}}, \nonumber
 	\end{align}
-	where $\text{P}_{{\rm tx},i}$ is the transmitted power in dBm by WN $i$, $\alpha$ is the path-loss exponent (which depends on the medium at which the signal is sent), $\text{P}_{{\rm rx},j}$ is the power in dBm received at WN $j$, $\text{PL}_0$ is the path-loss in one meter in dB, $d_{i,j}$ is the distance between the transmitter and the receiver in meters, $\text{G}_{{\rm s}}$ is the shadowing loss in dB, and $\text{G}_{{\rm o}}$ is the obstacles loss in dB. Note that we include the factor $d_{{\rm obs}}$, which is the distance between two obstacles in meters. 
+	where $\text{P}_{{\rm tx},i}$ is the transmitted power in dBm by WN $i$, $\text{P}_{{\rm rx},j}$ is the power in dBm received at WN $j$, $\text{PL}_0$ is the path-loss at one meter in dB, $\alpha_{\rm PL}$ is the path-loss exponent (which depends on the medium at which the signal is sent), $d_{i,j}$ is the distance between the transmitter and the receiver in meters, $\text{G}_{{\rm s}}$ is the shadowing loss in dB, and $\text{G}_{{\rm o}}$ is the obstacles loss in dB. Note that we include the factor $d_{{\rm obs}}$, which is the distance between two obstacles in meters. 
 	
 	%------------------------
 	% Throughput calculation
@@ -125,9 +125,10 @@
 	\nonumber
 	\label{eq:shannon_capacity}
 	\end{equation}
-	where $B$ is the channel width and the experienced Signal to Interference plus Noise Ratio (SINR) is given by:
+	where $B$ is the channel bandwidth and the experienced Signal to Interference plus Noise Ratio (SINR) is given by:
 	\begin{equation}
 	\text{SINR}_{i,t} = \frac{\text{P}_{i,t}}{\text{I}_{i,t}+\text{N}} \: [dB],
+	\nonumber
 	\label{eq:sinr}
 	\end{equation}
 	where $\text{P}_{i,t}$ and $\text{I}_{i,t}$ are the received power and the sum of the interference at WN $i$ at time $t$, respectively, and N is the floor noise power. For each STA in a WN, the interference is considered to be the total power received from all the APs of the other coexisting WNs as if they were continuously transmitting. Adjacent channel interference is also considered in $\text{I}_{i,t}, i \in \{1,..,W\}$, where $W$ is the number of neighbouring WNs. We consider that the transmitted power leaked to adjacent channels is $20$ dBm lower for each channel separation.	
@@ -159,7 +160,7 @@
 	\label{eq:reward_generation}
 	\nonumber
 	\end{equation}
-	where $\Gamma_{i,t}$ is the experienced throughput at time $t$ by WN $i \in \{1,...,n\}$, being $n$ is the number of WNs in the scenario, and $\Gamma_{i}^* = B \log_{2}(1 + \text{SNR}_{i})$ is WN $i$ maximum achievable throughput (i.e., when it uses the maximum transmission power and there is no interference).	Each WN applies the Stateless Q-learning as follows: 
+	where $\Gamma_{i,t}$ is the experienced throughput at time $t$ by WN $i \in \{1,...,n\}$, being $n$ the number of WNs in the scenario, and $\Gamma_{i}^* = B \log_{2}(1 + \text{SNR}_{i})$ is WN $i$ maximum achievable throughput (i.e., when it uses the maximum transmission power and there is no interference).	Each WN applies the Stateless Q-learning as follows: 
 	\begin{itemize}
 		\item Initially, it sets the estimates of its actions $k \in \{1,...,K\}$ to 0: $\hat{Q}(a_k) = 0$.
 		\item At each iteration, it applies an action by following the $\varepsilon$-greedy strategy, i.e., it selects the best-rewarding action with probability $1 - \varepsilon_t$, and a random one (uniformly distributed) the rest of the times.
@@ -193,7 +194,7 @@
 	%%% IV. SIMULATION %%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Performance Evaluation}
 	\label{section:performance_evaluation}	
-	In this section we introduce the simulation parameters and describe the experiments.\footnote{The code used for simulations can be found at \url{https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs.git (Commit: 16d4001a6e97870aab500cafb25b793efcb4f4a6)}.} Then, we show the main results.
+	In this section we introduce the simulation parameters and describe the experiments.\footnote{The code used for simulations can be found at \url{https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs.git} (Commit: 99a5abb4887d71a59239bcd91759ea30a482262d).} Then, we show the main results.
 	
 	%------------------------
 	% Simulation Parameters
@@ -218,6 +219,8 @@
 				TPC Values (dBm)                & \{5, 10, 15, 20\}                      \\ \hline				
 				$\text{PL}_0$ (dB)                   & 5
 				\\ \hline
+				$\alpha_{\rm PL}$			& 4.4
+				\\ \hline			
 				$\text{G}_s$ (dB)                   & Normally distributed with mean 9.5 
 				\\ \hline
 				$\text{G}_o$ (dB)                  & Uniformly distributed with mean 30
@@ -264,7 +267,7 @@
 	Figure \ref{fig:ql_alpha_gamma_epsilon_evaluation} shows the average aggregate throughput achieved for each of the proposed combinations. It can be observed that the best results with respect to the aggregate throughput, regarding both average and variance, are achieved when $\alpha = 1$, $\gamma = 0.95$ and $\varepsilon_0 = 1$. This means that for achieving the best results (i.e., high average aggregate throughput and low variance), the immediate reward of a given action must be considered rather than any previous information ($\alpha = 1$). We see that the difference between the pay-off offered by the best action and the current one must also be high ($\gamma = 0.95$). In addition, exploration must be highly boosted at the beginning ($\varepsilon_0=1$). For this setting, the resulting throughput ($902.739$ Mbps) represents $80.29$\% of the one provided by the optimal configuration that maximizes the aggregate throughput (shown in Table \ref{tbl:optimal_configurations}). Regarding proportional fairness, the algorithm's resulting throughput is only $1.32$\% higher than the optimal. 
 	\begin{figure}[]
 		\centering
-		\epsfig{file=images/ql_tuning_params_fixed_map_last_5000_iterations.eps, width=8cm}
+		\epsfig{file=images/ql_tuning_params_fixed_map_last_5000_iterations.eps, width=9.5cm}
 		\caption{Effect of $\alpha, \gamma$ and $\epsilon_0$ in the average aggregate throughput ($100$ simulation runs per sample).}
 		\label{fig:ql_alpha_gamma_epsilon_evaluation}
 	\end{figure}	
@@ -406,14 +409,8 @@
 		
 		\bibitem{nie1999qlearning} Nie, J., \& Haykin, S. (1999). A Q-learning-based dynamic channel assignment technique for mobile communication systems. IEEE Transactions on Vehicular Technology, 48(5), 1676-1687.
 		
-		\bibitem{akella2007self} Akella, Aditya, et al. "Self-management in chaotic wireless deployments." Wireless Networks 13.6 (2007): 737-755.
-		
-		\bibitem{riihijarvi2005frequency} Riihijarvi, J., Petrova, M., \& Mahonen, P. (2005, January). Frequency allocation for WLANs using graph colouring techniques. In Wireless On-demand Network Systems and Services, 2005. WONS 2005. Second Annual Conference on (pp. 216-222). IEEE.
-		
-		\bibitem{mhatre2007interference} Mhatre, V. P., Papagiannaki, K., \& Baccelli, F. (2007, May). Interference mitigation through power control in high density 802.11 WLANs. In INFOCOM 2007. 26th IEEE International Conference on Computer Communications. IEEE (pp. 535-543). IEEE.
-		
 		\bibitem{bennis2010q} Bennis, M., \& Niyato, D. (2010, December). A Q-learning based approach to interference avoidance in self-organized femtocell networks. In GLOBECOM Workshops (GC Wkshps), 2010 IEEE (pp. 706-710). IEEE.
-		
+
 		\bibitem{sutton1998reinforcement} Sutton, R. S., \& Barto, A. G. (1998). Reinforcement learning: An introduction (Vol. 1, No. 1). Cambridge: MIT press.
 		
 		\bibitem{watkins1992q} Watkins, C. J., \& Dayan, P. (1992). Q-learning. Machine learning, 8 (3-4), 279-292.

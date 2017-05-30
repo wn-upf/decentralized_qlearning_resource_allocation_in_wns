@@ -21,6 +21,12 @@ addpath(genpath('Reinforcement Learning Methods/'));
 addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
 addpath(genpath('Auxiliary Methods/'));
 
+disp('****************************************************************************************');
+disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
+disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi                          *');
+disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs *');
+disp('****************************************************************************************');
+
 disp('-----------------------')
 disp('Q-leraning: alpha-gamma relation')
 disp('-----------------------')
@@ -136,8 +142,7 @@ surf(alpha, gamma, mean_aggregate_tpt)
 xlabel('\gamma','FontSize', 24)
 ylabel('\alpha','FontSize', 24)
 zlabel('Network Throughput (Mbps)','FontSize', 24)
-set(gca, 'FontSize', 22)
-hold on
+set(gca, 'FontSize', 22, 'FontName', 'timesnewroman')
 %plot3(alpha(n), gamma(m), maxVal, 'ro', 'markersize', 20);
 
 [maxVal, ix_alpha] = max(std_aggregate_tpt(:));
@@ -150,7 +155,7 @@ surf(alpha, gamma, std_aggregate_tpt)
 xlabel('\gamma','FontSize', 24)
 ylabel('\alpha','FontSize', 24)
 zlabel('Standard Deviation (Mbps)','FontSize', 24)
-set(gca, 'FontSize', 22)
+set(gca, 'FontSize', 22, 'FontName', 'timesnewroman')
 hold on
 %plot3(alpha(n), gamma(m), maxVal, 'ro', 'markersize', 20);
 

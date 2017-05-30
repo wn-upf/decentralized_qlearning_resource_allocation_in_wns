@@ -23,6 +23,12 @@ addpath(genpath('Reinforcement Learning Methods/'));
 addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
 addpath(genpath('Auxiliary Methods/'));
 
+disp('****************************************************************************************');
+disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
+disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi                          *');
+disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs *');
+disp('****************************************************************************************');
+
 disp('-----------------------')
 disp('Q-learning: finding the best parameters')
 disp('-----------------------')
@@ -181,19 +187,19 @@ figure('pos', [450 400 500 350])
 axes;
 axis([1 20 30 70]);
 for i=1:size(gamma_epsilon_pairs,1)
-%     plot(alpha, mean_aggregate_tpt(:,i), r{i})
-%     hold on
+    plot(alpha, mean_aggregate_tpt(:,i), r{i})
+    hold on
     l = [l ['\gamma = ' num2str(gamma_epsilon_pairs(i,1)) ' \epsilon_{0} = ' num2str(gamma_epsilon_pairs(i,2))]];
-%     errorbar(alpha, mean_aggregate_tpt(:,i)', std_aggregate_tpt(:,i)')
-%     xticks(alpha)
+    errorbar(alpha, mean_aggregate_tpt(:,i)', std_aggregate_tpt(:,i)')
+    xticks(alpha)
 end
-%plot(alpha, optimal_agg_tpt*ones(1, size(alpha,2)),'--r','linewidth',2);
-% title('Last 5000 iterations', 'fontsize', 15)
-legend([l 'Best Configuration'])
+plot(alpha, optimal_agg_tpt*ones(1, size(alpha,2)),'--r','linewidth',2);
 legend(l)
 set(gca, 'FontSize', 22)
-ylabel('Network Throughput (Mbps)', 'FontSize', 24)
+ylabel('Network Throughput (Mbps)', 'FontSize', 24, 'fonttype', 'timesnewroman')
 xlabel('\alpha', 'FontSize', 24)
 axis([0 1 0 1.2 * max(max(mean_aggregate_tpt))])
+grid on
+set(gca, 'font', 'timesnewroman')
 
 save('ql_exp1_workspace.mat')

@@ -90,7 +90,6 @@ function [tpt_experienced_by_WLAN, Qval] = QlearningMethod(wlan, MAX_CONVERGENCE
                 transitions_counter(order(i), ix) = transitions_counter(order(i), ix) + 1;
                 
                 times_arm_is_seleceted(order(i), ix_action) = times_arm_is_seleceted(order(i), ix_action) + 1;
-
                 
                 % Change parameters according to the action obtained
                 wlan_aux(order(i)).channel = selected_action(1);   
@@ -102,21 +101,7 @@ function [tpt_experienced_by_WLAN, Qval] = QlearningMethod(wlan, MAX_CONVERGENCE
                 [~,index_tpc] = find(actions_tpc==wlan_aux(order(i)).PTdBm);
                 action_ix_per_wlan(order(i)) =  indexes2val(wlan_aux(order(i)).channel, index_cca, ...
                     index_tpc, size(actions_ch,2), size(actions_cca,2));
-                
-                % Compute the reward with the throughput obtained in the round after applying the action
-                power_matrix = PowerMatrix(wlan_aux);        
-                tpt_after_action = computeThroughputFromSINR(wlan_aux, power_matrix, noise);  % bps                                    
-                cumulative_tpt_experienced_per_WLAN = cumulative_tpt_experienced_per_WLAN + tpt_after_action;
-                cumulative_fairness = cumulative_fairness + JainsFairness(tpt_after_action);
-                
-                %Update Q                                    
-                for wlan_i=1:n_WLANs
-                    rw = (tpt_after_action(wlan_i) / upper_bound_tpt_per_wlan(wlan_i));                                      
-                    Qval{wlan_i}(action_ix_per_wlan(wlan_i)) = ...
-                        (1 - alpha) * Qval{wlan_i}(action_ix_per_wlan(wlan_i)) + ...
-                        (alpha * rw + gamma * (max(Qval{wlan_i})));
-                end
-                
+                               
                 % Update the exploration coefficient according to the inputted mode
                 if updateMode == 0
                     epsilon = initial_epsilon / t;
@@ -132,6 +117,17 @@ function [tpt_experienced_by_WLAN, Qval] = QlearningMethod(wlan, MAX_CONVERGENCE
         
         power_matrix = PowerMatrix(wlan_aux);        
         tpt_experienced_by_WLAN(t,:) = computeThroughputFromSINR(wlan_aux, power_matrix, noise);  % bps 
+                      
+        %Update Q   
+        for wlan_i = 1 : n_WLANs 
+            rw = (tpt_experienced_by_WLAN(t,wlan_i) / upper_bound_tpt_per_wlan(wlan_i));                                      
+            Qval{wlan_i}(action_ix_per_wlan(wlan_i)) = ...
+                (1 - alpha) * Qval{wlan_i}(action_ix_per_wlan(wlan_i)) + ...
+                (alpha * rw + gamma * (max(Qval{wlan_i})));
+        end
+
+        cumulative_tpt_experienced_per_WLAN = cumulative_tpt_experienced_per_WLAN +  tpt_experienced_by_WLAN(t,:);
+        cumulative_fairness = cumulative_fairness + JainsFairness( tpt_experienced_by_WLAN(t,:));
 
         % Increase the number of 'learning iterations' of a WLAN
         t = t + 1; 
@@ -142,7 +138,7 @@ function [tpt_experienced_by_WLAN, Qval] = QlearningMethod(wlan, MAX_CONVERGENCE
     if printInfo
     
         % Throughput experienced by each WLAN for each EXP3 iteration
-        figure('pos',[1 10 320 470])
+        figure('pos',[450 400 500 350])        
         axes;
         axis([1 20 30 70]);
         % Print the preferred action per wlan
