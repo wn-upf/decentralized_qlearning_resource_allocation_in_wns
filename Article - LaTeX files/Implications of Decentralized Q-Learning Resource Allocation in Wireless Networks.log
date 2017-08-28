@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  30 MAY 2017 09:52
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  28 AUG 2017 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,29 +973,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 175.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 233.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
  [2]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 244.
+               Default added (so using `tbp') on input line 260.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 268.
+               Default added (so using `tbp') on input line 284.
 
 File: images/ql_tuning_params_fixed_map_last_5000_iterations.eps Graphic file (
 type eps)
 <images/ql_tuning_params_fixed_map_last_5000_iterations.eps>
-Overfull \hbox (18.30118pt too wide) in paragraph at lines 270--271
+Overfull \hbox (18.30118pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
@@ -1006,7 +1006,7 @@ File: images/alpha_vs_gamma_std_sqrt_epsilon.eps Graphic file (type eps)
 <images/alpha_vs_gamma_std_sqrt_epsilon.eps> [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 300.
+               Default added (so using `tbp') on input line 316.
 
 File: images/e_1_a1_g095_ind_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_ind_tpt.eps>
@@ -1019,7 +1019,7 @@ File: images/e_01_a_01_g_005_ind_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_ind_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 327.
+               Default added (so using `tbp') on input line 343.
 
 File: images/e_1_a1_g095_avg_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_avg_tpt.eps>
@@ -1032,7 +1032,7 @@ File: images/e_01_a_01_g_005_avg_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_avg_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 354.
+               Default added (so using `tbp') on input line 370.
 
 File: images/e_1_a1_g095.eps Graphic file (type eps)
 <images/e_1_a1_g095.eps>
@@ -1043,14 +1043,15 @@ File: images/e_1_a_01_g_005.eps Graphic file (type eps)
 <images/e_1_a_01_g_005.eps>
 File: images/e_01_a_01_g_005.eps Graphic file (type eps)
  <images/e_01_a_01_g_005.eps>
-Underfull \hbox (badness 2285) in paragraph at lines 387--388
+Underfull \vbox (badness 2556) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 2285) in paragraph at lines 403--404
 []\OT1/ptm/m/n/10 However, the com-pet-i-tive-ness of the pre-sented fully-
  []
 
-[4]
 Missing character: There is no ń in font ptmr7t!
 Missing character: There is no ń in font ptmr7t!
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1073,7 +1074,7 @@ works.aux) )
 Here is how much of TeX's memory you used:
  17476 strings out of 493591
  339555 string characters out of 6143546
- 378214 words of memory out of 5000000
+ 379214 words of memory out of 5000000
  20657 multiletter control sequences out of 15000+600000
  33320 words of font info for 87 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191

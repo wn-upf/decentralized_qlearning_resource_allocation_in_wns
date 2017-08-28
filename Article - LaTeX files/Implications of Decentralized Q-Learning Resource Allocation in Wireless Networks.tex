@@ -80,12 +80,14 @@
 	
 	\IEEEpeerreviewmaketitle
 	
+	
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%  I. INTRODUCTION %%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Introduction}
 	% no \IEEEPARstart	
-	Reinforcement Learning (RL) has recently spread use in the wireless communications field to solve many kind of problems such as Access Point (AP) association\cite{chen2010ap}, channel selection \cite{maghsudi2015channel} or transmit power adjustment \cite{maghsudi2015joint}, as it allows learning good-performing configurations only from the observed results. Among these, Q-learning has been applied to dynamic channel assignment in mobile networks in \cite{nie1999qlearning} and to automatic channel selection in Femto Cell networks in \cite{bennis2010q}. However, to the best of our knowledge, the case of a fully decentralized scenario where nodes do not have knowledge from each other, has not yet been considered.  
+	Reinforcement Learning (RL) has recently spread use in the wireless communications field to solve many kinds of problems such as Access Point (AP) association\cite{chen2010ap}, channel selection \cite{maghsudi2015channel} or transmit power adjustment \cite{maghsudi2015joint}, as it allows learning good-performing configurations only from the observed results. Among these, Q-learning has been applied to dynamic channel assignment in mobile networks in \cite{nie1999qlearning} and to automatic channel selection in Femto Cell networks in \cite{bennis2010q}. However, to the best of our knowledge, the case of a fully decentralized scenario where nodes do not have knowledge from each other, has not yet been considered.  
 	
 	In this work we propose a stateless variation of Q-learning in which nodes select the transmission power and channel to use solely based on their resulting throughput. We concentrate on a fully decentralized scenario where no information about the actions and resulting performance of the other nodes is available to the learners. Note that inferring the throughput of neighbouring nodes allocated to different channels is costly as periodic sensing in the other channels would then be needed. We aim to characterize the performance of Q-learning in such scenarios, obtaining insight on the most played actions (i.e., channel and transmit power selected) and the resulting performance. We observe that when no information about the neighbours is available to the learners, these will tend to apply selfish strategies that result in alternating good/poor performance depending on the actions of the others. In such scenarios, we show that the use of Q-learning allows each network to find the best-performing actions, though without reaching a steady solution. Note that achieving a steady solution in a decentralized environment relies in finding a Nash Equilibrium, a concept used in Game Theory to define a set of individual strategies that maximize the profits of each player in a non-cooperative game, regardless of the others' strategy. Formally, a set of best player actions $a^* = (a_1^*, ..., a_n^*) \in A$ leads to a Nash Equilibrium if $a_i^* \in B_i(a_{-i}^*), \forall i \in N$, where $B_i(a_{-i})$ is the best response to the others actions ($a_{-i}$). Thus, the consequences of not reaching a Nash Equilibrium can have an impact on performance variability.
 	
@@ -99,7 +101,7 @@
 	\section{System model}
 	\label{section:system_model}	
 	
-	For the remainder of this work, we consider a scenario at which several WNs are placed in a 3D-map (with parameters described later in Section \ref{section:simulation_parameters}), each one formed by an Access Point (AP) transmitting to a single Station (STA) in downlink manner. 
+	For the remainder of this work, we consider a scenario in which several WNs are placed in a 3D-map (with parameters described later in Section \ref{section:simulation_parameters}), each one formed by an Access Point (AP) transmitting to a single Station (STA) in downlink manner. 
 	
 	%------------------------
 	% Channel modelling
@@ -107,11 +109,11 @@
 	\subsection{Channel modelling}
 	\label{section:channel_modelling}	
 	
-	Path-loss and shadowing effects are modelled by the following log-distance model for indoor communications:	
+	Path-loss and shadowing effects are modelled using the log-distance model for indoor communications. The path-loss between WN $i$ and $j$ is given by	
 	\begin{align}
 	\text{PL}_{i,j} &= \text{P}_{{\rm tx},i} - \text{P}_{{\rm rx},j} = \nonumber \\ & = \text{PL}_0 + 10  \alpha_{\rm PL}  \log_{10}(d_{i,j}) + \text{G}_{{\rm s}} + \frac{d_{i,j}}{d_{{\rm obs}}} \text{G}_{{\rm o}}, \nonumber
 	\end{align}
-	where $\text{P}_{{\rm tx},i}$ is the transmitted power in dBm by WN $i$, $\text{P}_{{\rm rx},j}$ is the power in dBm received at WN $j$, $\text{PL}_0$ is the path-loss at one meter in dB, $\alpha_{\rm PL}$ is the path-loss exponent (which depends on the medium at which the signal is sent), $d_{i,j}$ is the distance between the transmitter and the receiver in meters, $\text{G}_{{\rm s}}$ is the shadowing loss in dB, and $\text{G}_{{\rm o}}$ is the obstacles loss in dB. Note that we include the factor $d_{{\rm obs}}$, which is the distance between two obstacles in meters. 
+	where $\text{P}_{{\rm tx},i}$ is the transmitted power in dBm by WN $i$, $\text{P}_{{\rm rx},j}$ is the power in dBm received in WN $j$, $\text{PL}_0$ is the path-loss at one meter in dB, $\alpha_{\rm PL}$ is the path-loss exponent, $d_{i,j}$ is the distance between the transmitter and the receiver in meters, $\text{G}_{{\rm s}}$ is the shadowing loss in dB, and $\text{G}_{{\rm o}}$ is the obstacles loss in dB. Note that we include the factor $d_{{\rm obs}}$, which is the distance between two obstacles in meters. 
 	
 	%------------------------
 	% Throughput calculation
@@ -127,7 +129,7 @@
 	\end{equation}
 	where $B$ is the channel bandwidth and the experienced Signal to Interference plus Noise Ratio (SINR) is given by:
 	\begin{equation}
-	\text{SINR}_{i,t} = \frac{\text{P}_{i,t}}{\text{I}_{i,t}+\text{N}} \: [dB],
+	\text{SINR}_{i,t} = \frac{\text{P}_{i,t}}{\text{I}_{i,t}+\text{N}},
 	\nonumber
 	\label{eq:sinr}
 	\end{equation}
@@ -153,7 +155,11 @@
 	\hat{Q}(s_t,a_t)\leftarrow (1-\alpha_t) \hat{Q}(s_t,a_t) + \alpha_t \Big(r_t + \gamma \big(\underset{a'}{\text{max}}\hat{Q}(s_{t+1},a')\big)\Big),
 	\nonumber
 	\end{equation}	
-	where $\alpha_t$ is the learning rate at time $t$, and $\underset{a'}{\text{max}}\hat{Q}(s_{t+1},a')$ is the best estimated value for the next state $s_{t+1}$. The optimal solution is achieved with probability 1 if $\sum_{t=0}^{\infty} \alpha_t = \infty$, and $\sum_{t=0}^{\infty} \alpha_t^2 < \infty$, which satisfies that $\underset{t \rightarrow \infty}{\lim} \hat{Q}(s,a) = Q^*(s,a)$.
+	where $\alpha_t$ is the learning rate at time $t$, and $\underset{a'}{\text{max}}\hat{Q}(s_{t+1},a')$ is the best estimated value for the next state $s_{t+1}$. The optimal solution is 
+	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 1
+	theoretically
+	%%
+	achieved with probability 1 if $\sum_{t=0}^{\infty} \alpha_t = \infty$, and $\sum_{t=0}^{\infty} \alpha_t^2 < \infty$, which satisfies that $\underset{t \rightarrow \infty}{\lim} \hat{Q}(s,a) = Q^*(s,a)$.
 	Since we focus on a completely decentralized scenario where no information about the other nodes is available, the system can then be fully described by the set of actions and rewards.\footnote{We note that local information such as the observed instantaneous channel quality could be incorporated in the state definition. However, such a description of the system entails increased complexity.} Thus, we propose using a stateless variation of the original Q-learning algorithm. To implement decentralized learning to the resource allocation problem, we consider each WN to be an agent running Stateless Q-learning through an $\varepsilon$-greedy action-selection strategy, so that actions $a \in \mathcal{A}$ correspond to all the possible configurations that can be chosen with respect to the channel and transmit power. During the learning process we assume that WNs select actions sequentially, so that at each learning iteration, every agent takes an action in an ordered way. The order at which WNs choose an action at each iteration is randomly selected at the beginning of it. The reward after choosing an action is set as:
 	\begin{equation}
 	r_{i,t} = \frac{\Gamma_{i,t}}{\Gamma_i^*},
@@ -167,7 +173,13 @@
 		\item After choosing action $a_k$, it observes the generated reward (the relative experienced throughput), and updates the estimated value $\hat{Q}(a_k)$.
 		\item Finally, $\varepsilon_t$ is updated to follow a decreasing sequence: $\varepsilon_t = \frac{\varepsilon_0}{\sqrt[]{t}}$.
 	\end{itemize}	
+	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 1
+	Note, as well, that the optimal policy cannot be derived for the presented scenario, but it can be approximated to enhance spatial reuse. This is due to the nature of the presented environment, as well as WNs decisions affect the others performance.
+	%%	
 	Formally, the implementation details of Stateless Q-learning are described in Algorithm \ref{alg:qlearning}.
+	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 2
+	The presented learning approach is intended to operate at the PHY level, allowing the operation of the current MAC-layer communication standards (e.g., in IEEE 802.11 WLANs, the channel access is governed by the CSMA/CA operation, so that Stateless Q-learning may contribute to improve spatial reuse at the PHY level).
+	%%
 	\begin{algorithm}
 		\SetKwInOut{Input}{Input}
 		\SetKwInOut{Output}{Output}		
@@ -201,7 +213,11 @@
 	%------------------------
 	\subsection{Simulation Parameters}
 	\label{section:simulation_parameters}
-	According to \cite{bellalta2016ax}, a typical high-density scenario for residential buildings contains $0.0033 \text{APs}/\text{m}^3$. We then consider a map scenario with dimensions $10\times5\times10$ m containing 4 WNs that form a grid topology in which STAs are placed at the maximum possible distance from the other networks. This toy scenario allows us to study the performance of Stateless Q-learning in a controlled environment. We consider that the number of channels is equal to half the number of coexisting WNs, so that we can study a challenging situation regarding the spatial reuse. Table \ref{tbl:simulation_parameters} details the parameters used.	
+	According to \cite{bellalta2016ax}, a typical high-density scenario for residential buildings contains $0.0033 \text{APs}/\text{m}^3$. We then consider a map scenario with dimensions $10\times5\times10$ m containing 4 WNs that form a grid topology in which STAs are placed at the maximum possible distance from the other networks. This toy scenario allows us to study the performance of Stateless Q-learning in a controlled environment
+	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 2
+	, which is useful to check the applicability of RL in WNs by only using local information \footnote{The analysis of the presented learning mechanisms in more congested scenarios is left as future work.}.
+	%%	
+	We consider that the number of channels is equal to half the number of coexisting WNs, so that we can study a challenging situation regarding the spatial reuse. Table \ref{tbl:simulation_parameters} details the parameters used.	
 	\begin{table}[h!]
 		\centering
 		\resizebox{\columnwidth}{!}{%
@@ -216,7 +232,7 @@
 				Channel Bandwidth (MHz)         & 20                                    \\ \hline
 				Initial channel selection model & Uniformly distributed 
 				\\ \hline
-				TPC Values (dBm)                & \{5, 10, 15, 20\}                      \\ \hline				
+				Transmit power values (dBm)                & \{5, 10, 15, 20\}                      \\ \hline				
 				$\text{PL}_0$ (dB)                   & 5
 				\\ \hline
 				$\alpha_{\rm PL}$			& 4.4
@@ -386,9 +402,12 @@
 	
 	However, the competitiveness of the presented fully-decentralized environment involves the non-existence of a Nash Equilibrium. Thus, we have also identified high variability in the experienced individual throughput due to the constant changes of the played actions, motivated by the fact that the reward generated by each action changes according to the opponents' ones. We have evaluated the impact of the parameters intrinsic to the learning algorithm on this variability showing that it can be reduced by decreasing the exploration degree and learning rate. The individual reduction on the throughput variability occurs at the expense of losing aggregate performance.
 	
-	This variability can potentially result in negative effects in the overall WN's performance. The effects of such a fluctuation in higher layers of the protocol stack can have severe consequences depending on the time scale at which they occur. For example, noticing high throughput fluctuations may trigger congestion recovery procedures in TCP (Transmission Control Protocol), which would harm the experienced performance. 
+	This variability can potentially result in negative effects on the overall WN's performance. The effects of such a fluctuation in higher layers of the protocol stack can have severe consequences depending on the time scale at which they occur. For example, noticing high throughput fluctuations may trigger congestion recovery procedures in TCP (Transmission Control Protocol), which would harm the experienced performance. 
 	
-	We left as future work to further extend the decentralized approach in order to find collaborative algorithms that allow the neighbouring WNs to reach an equilibrium that grants acceptable individual performance. Acquiring any kind of knowledge about the neighbouring WNs is assumed to solve the variability issues arisen from decentralization. This information may be directly exchanged or inferred from observations.
+	We left for future work to further extend the decentralized approach in order to find collaborative algorithms that allow the neighbouring WNs to reach an equilibrium that grants acceptable individual performance. Acquiring any kind of knowledge about the neighbouring WNs is assumed to solve the variability issues arisen from decentralization. This information may be directly exchanged or inferred from observations. 
+	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 3
+	Furthermore, other learning approaches are intended to be analysed in the future for performance comparison in the resource allocation problem. 
+	%%	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%  ACKNOWLEDGEMENT  %%%
@@ -410,7 +429,7 @@
 		\bibitem{nie1999qlearning} Nie, J., \& Haykin, S. (1999). A Q-learning-based dynamic channel assignment technique for mobile communication systems. IEEE Transactions on Vehicular Technology, 48(5), 1676-1687.
 		
 		\bibitem{bennis2010q} Bennis, M., \& Niyato, D. (2010, December). A Q-learning based approach to interference avoidance in self-organized femtocell networks. In GLOBECOM Workshops (GC Wkshps), 2010 IEEE (pp. 706-710). IEEE.
-
+		
 		\bibitem{sutton1998reinforcement} Sutton, R. S., \& Barto, A. G. (1998). Reinforcement learning: An introduction (Vol. 1, No. 1). Cambridge: MIT press.
 		
 		\bibitem{watkins1992q} Watkins, C. J., \& Dayan, P. (1992). Q-learning. Machine learning, 8 (3-4), 279-292.
