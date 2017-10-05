@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  28 AUG 2017 12:40
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  26 SEP 2017 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -116,7 +116,37 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count94
+\Gm@cntv=\count95
+\c@Gm@tempcnt=\count96
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
+\Gm@dimlist=\toks16
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -137,21 +167,17 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
-)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count94
-\calc@Bcount=\count95
-\calc@Adimen=\dimen126
-\calc@Bdimen=\dimen127
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen134
+\calc@Bdimen=\dimen135
 \calc@Askip=\skip44
 \calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count96
+\calc@Ccount=\count99
 \calc@Cskip=\skip46
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -167,51 +193,51 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen128
+\@emptytoks=\toks17
+\ex@=\dimen136
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen129
+\pmbraise@=\dimen137
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count97
+\inf@bad=\count100
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count98
-\leftroot@=\count99
+\uproot@=\count101
+\leftroot@=\count102
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count100
-\DOTSCASE@=\count101
+\classnum@=\count103
+\DOTSCASE@=\count104
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
-\big@size=\dimen130
+\big@size=\dimen138
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count102
-\c@MaxMatrixCols=\count103
+\macc@depth=\count105
+\c@MaxMatrixCols=\count106
 \dotsspace@=\muskip10
-\c@parentequation=\count104
-\dspbrk@lvl=\count105
-\tag@help=\toks17
-\row@=\count106
-\column@=\count107
-\maxfields@=\count108
-\andhelp@=\toks18
-\eqnshift@=\dimen131
-\alignsep@=\dimen132
-\tagshift@=\dimen133
-\tagwidth@=\dimen134
-\totwidth@=\dimen135
-\lineht@=\dimen136
-\@envbody=\toks19
+\c@parentequation=\count107
+\dspbrk@lvl=\count108
+\tag@help=\toks18
+\row@=\count109
+\column@=\count110
+\maxfields@=\count111
+\andhelp@=\toks19
+\eqnshift@=\dimen139
+\alignsep@=\dimen140
+\tagshift@=\dimen141
+\tagwidth@=\dimen142
+\totwidth@=\dimen143
+\lineht@=\dimen144
+\@envbody=\toks20
 \multlinegap=\skip48
 \multlinetaggap=\skip49
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
@@ -219,15 +245,15 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count109
-\l_MT_multwidth_dim=\dimen137
+\g_MT_multlinerow_int=\count112
+\l_MT_multwidth_dim=\dimen145
 \origjot=\skip50
-\l_MT_shortvdotswithinadjustabove_dim=\dimen138
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen139
-\l_MT_above_intertext_sep=\dimen140
-\l_MT_below_intertext_sep=\dimen141
-\l_MT_above_shortintertext_sep=\dimen142
-\l_MT_below_shortintertext_sep=\dimen143
+\l_MT_shortvdotswithinadjustabove_dim=\dimen146
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen147
+\l_MT_above_intertext_sep=\dimen148
+\l_MT_below_intertext_sep=\dimen149
+\l_MT_above_shortintertext_sep=\dimen150
+\l_MT_below_shortintertext_sep=\dimen151
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
@@ -236,10 +262,10 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count110
-\c@ALC@line=\count111
-\c@ALC@rem=\count112
-\c@ALC@depth=\count113
+\c@ALC@unique=\count113
+\c@ALC@line=\count114
+\c@ALC@rem=\count115
+\c@ALC@depth=\count116
 \ALC@tlm=\skip51
 \algorithmicindent=\skip52
 )
@@ -256,17 +282,17 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen144
-\extrarowheight=\dimen145
-\NC@list=\toks21
+\col@sep=\dimen152
+\extrarowheight=\dimen153
+\NC@list=\toks22
 \extratabsurround=\skip53
 \backup@length=\skip54
 )
-\everycr=\toks22
+\everycr=\toks23
 \minrowclearance=\skip55
 )
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count114
+\rownum=\count117
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
@@ -277,7 +303,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen146
+\bigstrutjot=\dimen154
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/genmisc/nth.sty
 Package: nth 2002/02/27
@@ -296,8 +322,8 @@ File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 96.
 )
-\Gin@req@height=\dimen147
-\Gin@req@width=\dimen148
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -305,13 +331,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen149
-\captionmargin@=\dimen150
-\captionwidth=\dimen151
-\caption@tempdima=\dimen152
-\caption@indent=\dimen153
-\caption@parindent=\dimen154
-\caption@hangindent=\dimen155
+\captionmargin=\dimen157
+\captionmargin@=\dimen158
+\captionwidth=\dimen159
+\caption@tempdima=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
@@ -331,11 +357,11 @@ ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
 ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
 \fi .
-\c@ContinuedFloat=\count115
+\c@ContinuedFloat=\count118
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count116
-\c@subtable=\count117
+\c@subfigure=\count119
+\c@subtable=\count120
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
@@ -436,31 +462,31 @@ L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
 L3 Module: l3str 2016/03/24 v6441 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2016/03/24 v6441 L3 Integers
-\c_max_int=\count118
-\l_tmpa_int=\count119
-\l_tmpb_int=\count120
-\g_tmpa_int=\count121
-\g_tmpb_int=\count122
+\c_max_int=\count121
+\l_tmpa_int=\count122
+\l_tmpb_int=\count123
+\g_tmpa_int=\count124
+\g_tmpb_int=\count125
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count123
+\g__prg_map_int=\count126
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
 L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
 L3 Module: l3msg 2016/03/26 v6464 L3 Messages
 L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
-\l_iow_line_count_int=\count124
-\l__iow_target_count_int=\count125
-\l__iow_current_line_int=\count126
-\l__iow_current_word_int=\count127
-\l__iow_current_indentation_int=\count128
+\l_iow_line_count_int=\count127
+\l__iow_target_count_int=\count128
+\l__iow_current_line_int=\count129
+\l__iow_current_word_int=\count130
+\l__iow_current_indentation_int=\count131
 L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
-\c_zero_dim=\dimen156
-\c_max_dim=\dimen157
-\l_tmpa_dim=\dimen158
-\l_tmpb_dim=\dimen159
-\g_tmpa_dim=\dimen160
-\g_tmpb_dim=\dimen161
+\c_zero_dim=\dimen164
+\c_max_dim=\dimen165
+\l_tmpa_dim=\dimen166
+\l_tmpb_dim=\dimen167
+\g_tmpa_dim=\dimen168
+\g_tmpb_dim=\dimen169
 \c_zero_skip=\skip56
 \c_max_skip=\skip57
 \l_tmpa_skip=\skip58
@@ -474,18 +500,18 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count129
-\l_keys_choice_int=\count130
+\g__keyval_level_int=\count132
+\l_keys_choice_int=\count133
 L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
-\c__fp_leading_shift_int=\count131
-\c__fp_middle_shift_int=\count132
-\c__fp_trailing_shift_int=\count133
-\c__fp_big_leading_shift_int=\count134
-\c__fp_big_middle_shift_int=\count135
-\c__fp_big_trailing_shift_int=\count136
-\c__fp_Bigg_leading_shift_int=\count137
-\c__fp_Bigg_middle_shift_int=\count138
-\c__fp_Bigg_trailing_shift_int=\count139
+\c__fp_leading_shift_int=\count134
+\c__fp_middle_shift_int=\count135
+\c__fp_trailing_shift_int=\count136
+\c__fp_big_leading_shift_int=\count137
+\c__fp_big_middle_shift_int=\count138
+\c__fp_big_trailing_shift_int=\count139
+\c__fp_Bigg_leading_shift_int=\count140
+\c__fp_Bigg_middle_shift_int=\count141
+\c__fp_Bigg_trailing_shift_int=\count142
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box30
 \l_tmpa_box=\box31
@@ -494,13 +520,13 @@ L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \g_tmpb_box=\box34
 L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
 \l__coffin_internal_box=\box35
-\l__coffin_internal_dim=\dimen162
-\l__coffin_offset_x_dim=\dimen163
-\l__coffin_offset_y_dim=\dimen164
-\l__coffin_x_dim=\dimen165
-\l__coffin_y_dim=\dimen166
-\l__coffin_x_prime_dim=\dimen167
-\l__coffin_y_prime_dim=\dimen168
+\l__coffin_internal_dim=\dimen170
+\l__coffin_offset_x_dim=\dimen171
+\l__coffin_offset_y_dim=\dimen172
+\l__coffin_x_dim=\dimen173
+\l__coffin_y_dim=\dimen174
+\l__coffin_x_prime_dim=\dimen175
+\l__coffin_y_prime_dim=\dimen176
 \c_empty_coffin=\box36
 \l__coffin_aligned_coffin=\box37
 \l__coffin_aligned_internal_coffin=\box38
@@ -509,28 +535,28 @@ L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
 \l__coffin_display_coffin=\box41
 \l__coffin_display_coord_coffin=\box42
 \l__coffin_display_pole_coffin=\box43
-\l__coffin_display_offset_dim=\dimen169
-\l__coffin_display_x_dim=\dimen170
-\l__coffin_display_y_dim=\dimen171
+\l__coffin_display_offset_dim=\dimen177
+\l__coffin_display_x_dim=\dimen178
+\l__coffin_display_y_dim=\dimen179
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
 L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
 L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
-\l__box_top_dim=\dimen172
-\l__box_bottom_dim=\dimen173
-\l__box_left_dim=\dimen174
-\l__box_right_dim=\dimen175
-\l__box_top_new_dim=\dimen176
-\l__box_bottom_new_dim=\dimen177
-\l__box_left_new_dim=\dimen178
-\l__box_right_new_dim=\dimen179
+\l__box_top_dim=\dimen180
+\l__box_bottom_dim=\dimen181
+\l__box_left_dim=\dimen182
+\l__box_right_dim=\dimen183
+\l__box_top_new_dim=\dimen184
+\l__box_bottom_new_dim=\dimen185
+\l__box_left_new_dim=\dimen186
+\l__box_right_new_dim=\dimen187
 \l__box_internal_box=\box44
-\l__coffin_bounding_shift_dim=\dimen180
-\l__coffin_left_corner_dim=\dimen181
-\l__coffin_right_corner_dim=\dimen182
-\l__coffin_bottom_corner_dim=\dimen183
-\l__coffin_top_corner_dim=\dimen184
-\l__coffin_scaled_total_height_dim=\dimen185
-\l__coffin_scaled_width_dim=\dimen186
+\l__coffin_bounding_shift_dim=\dimen188
+\l__coffin_left_corner_dim=\dimen189
+\l__coffin_right_corner_dim=\dimen190
+\l__coffin_bottom_corner_dim=\dimen191
+\l__coffin_top_corner_dim=\dimen192
+\l__coffin_scaled_total_height_dim=\dimen193
+\l__coffin_scaled_width_dim=\dimen194
 L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
@@ -539,11 +565,11 @@ File: l3xdvidpfmx.def 2016/03/26 v6465 L3 Experimental driver: xdvipdfmx
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count140
-\l__xparse_m_args_int=\count141
-\l__xparse_mandatory_args_int=\count142
-\l__xparse_processor_int=\count143
-\l__xparse_v_nesting_int=\count144
+\l__xparse_current_arg_int=\count143
+\l__xparse_m_args_int=\count144
+\l__xparse_mandatory_args_int=\count145
+\l__xparse_processor_int=\count146
+\l__xparse_v_nesting_int=\count147
 )
 Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
 
@@ -551,39 +577,39 @@ Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
 Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box46
-\l__siunitx_tmp_dim=\dimen187
-\l__siunitx_tmp_int=\count145
-\l__siunitx_number_mantissa_length_int=\count146
-\l__siunitx_number_uncert_length_int=\count147
-\l__siunitx_round_int=\count148
-\l__siunitx_process_decimal_int=\count149
-\l__siunitx_process_uncertainty_int=\count150
-\l__siunitx_process_fixed_int=\count151
-\l__siunitx_process_integer_min_int=\count152
-\l__siunitx_process_precision_int=\count153
-\l__siunitx_group_min_int=\count154
+\l__siunitx_tmp_dim=\dimen195
+\l__siunitx_tmp_int=\count148
+\l__siunitx_number_mantissa_length_int=\count149
+\l__siunitx_number_uncert_length_int=\count150
+\l__siunitx_round_int=\count151
+\l__siunitx_process_decimal_int=\count152
+\l__siunitx_process_uncertainty_int=\count153
+\l__siunitx_process_fixed_int=\count154
+\l__siunitx_process_integer_min_int=\count155
+\l__siunitx_process_precision_int=\count156
+\l__siunitx_group_min_int=\count157
 \l__siunitx_angle_marker_box=\box47
 \l__siunitx_angle_unit_box=\box48
-\l__siunitx_angle_marker_dim=\dimen188
-\l__siunitx_angle_unit_dim=\dimen189
-\l__siunitx_unit_int=\count155
-\l__siunitx_unit_denominator_int=\count156
-\l__siunitx_unit_numerator_int=\count157
-\l__siunitx_unit_prefix_int=\count158
-\l__siunitx_unit_prefix_base_int=\count159
-\l__siunitx_unit_prefix_gram_int=\count160
-\l__siunitx_number_product_int=\count161
+\l__siunitx_angle_marker_dim=\dimen196
+\l__siunitx_angle_unit_dim=\dimen197
+\l__siunitx_unit_int=\count158
+\l__siunitx_unit_denominator_int=\count159
+\l__siunitx_unit_numerator_int=\count160
+\l__siunitx_unit_prefix_int=\count161
+\l__siunitx_unit_prefix_base_int=\count162
+\l__siunitx_unit_prefix_gram_int=\count163
+\l__siunitx_number_product_int=\count164
 \c__siunitx_one_fill_skip=\skip62
 \l__siunitx_table_unit_align_skip=\skip63
-\l__siunitx_table_exponent_dim=\dimen190
-\l__siunitx_table_integer_dim=\dimen191
-\l__siunitx_table_mantissa_dim=\dimen192
-\l__siunitx_table_marker_dim=\dimen193
-\l__siunitx_table_result_dim=\dimen194
-\l__siunitx_table_uncert_dim=\dimen195
-\l__siunitx_table_fill_pre_dim=\dimen196
-\l__siunitx_table_fill_post_dim=\dimen197
-\l__siunitx_table_fill_mid_dim=\dimen198
+\l__siunitx_table_exponent_dim=\dimen198
+\l__siunitx_table_integer_dim=\dimen199
+\l__siunitx_table_mantissa_dim=\dimen256
+\l__siunitx_table_marker_dim=\dimen257
+\l__siunitx_table_result_dim=\dimen258
+\l__siunitx_table_uncert_dim=\dimen259
+\l__siunitx_table_fill_pre_dim=\dimen260
+\l__siunitx_table_fill_post_dim=\dimen261
+\l__siunitx_table_fill_mid_dim=\dimen262
 \l__siunitx_table_pre_box=\box49
 \l__siunitx_table_post_box=\box50
 \l__siunitx_table_mantissa_box=\box51
@@ -715,8 +741,8 @@ Package: translator 2010/06/12 ver 1.10
 uage-mappings.tex)))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen199
-\epsfysize=\dimen256
+\epsfxsize=\dimen263
+\epsfysize=\dimen264
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
@@ -751,10 +777,6 @@ Package etexcmds Info: Could not find \expanded.
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
-)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -767,15 +789,15 @@ orted.
 
 )) (/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks23
-\SOUL@lasttoken=\toks24
-\SOUL@cmds=\toks25
-\SOUL@buffer=\toks26
-\SOUL@token=\toks27
+\SOUL@word=\toks24
+\SOUL@lasttoken=\toks25
+\SOUL@cmds=\toks26
+\SOUL@buffer=\toks27
+\SOUL@token=\toks28
 \SOUL@spaceskip=\skip66
-\SOUL@ttwidth=\dimen257
-\SOUL@uldp=\dimen258
-\SOUL@ulht=\dimen259
+\SOUL@ttwidth=\dimen265
+\SOUL@uldp=\dimen266
+\SOUL@ulht=\dimen267
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -795,7 +817,7 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count162
+\etb@tempcnta=\count165
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -812,7 +834,7 @@ Invalid UTF-8 byte or sequence at line 275 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 290 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 540 replaced by U+FFFD.
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count163
+\c@AlgoLine=\count166
 Invalid UTF-8 byte or sequence at line 1311 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 1313 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 1315 replaced by U+FFFD.
@@ -836,12 +858,12 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \skiplength=\skip73
 \algomargin=\skip74
 \skipalgocfslide=\skip75
-\algowidth=\dimen260
-\inoutsize=\dimen261
-\inoutindent=\dimen262
-\interspacetitleruled=\dimen263
-\interspacealgoruled=\dimen264
-\interspacetitleboxruled=\dimen265
+\algowidth=\dimen268
+\inoutsize=\dimen269
+\inoutindent=\dimen270
+\interspacetitleruled=\dimen271
+\interspacealgoruled=\dimen272
+\interspacetitleboxruled=\dimen273
 \algocf@ruledwidth=\skip76
 \algocf@inoutbox=\box53
 \algocf@inputbox=\box54
@@ -857,16 +879,16 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algoheightrule=\skip82
 \algotitleheightruledefault=\skip83
 \algotitleheightrule=\skip84
-\c@algocfline=\count164
-\c@algocfproc=\count165
-\c@algocf=\count166
+\c@algocfline=\count167
+\c@algocfproc=\count168
+\c@algocf=\count169
 \algocf@algoframe=\box59
 \algocf@algobox=\box60
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen266
-\c@nlinenum=\count167
-\TeXr@lab=\toks28
+\rotheadsize=\dimen274
+\c@nlinenum=\count170
+\TeXr@lab=\toks29
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
@@ -876,10 +898,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks29
-\XKV@tempa@toks=\toks30
+\XKV@toks=\toks30
+\XKV@tempa@toks=\toks31
 )
-\XKV@depth=\count168
+\XKV@depth=\count171
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -893,30 +915,30 @@ Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box61
 )
-\tc@llx=\dimen267
-\tc@lly=\dimen268
-\tc@urx=\dimen269
-\tc@ury=\dimen270
+\tc@llx=\dimen275
+\tc@lly=\dimen276
+\tc@urx=\dimen277
+\tc@ury=\dimen278
 Package trimclip Info: Using driver 'tc-xetex.def'.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/tc-xetex.def
 File: tc-xetex.def 2012/05/13 v1.0 Clipping driver for xetex
 ))
-\adjbox@Width=\dimen271
-\adjbox@Height=\dimen272
-\adjbox@Depth=\dimen273
-\adjbox@Totalheight=\dimen274
+\adjbox@Width=\dimen279
+\adjbox@Height=\dimen280
+\adjbox@Depth=\dimen281
+\adjbox@Totalheight=\dimen282
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count169
+\c@checkoddpage=\count172
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box62
-\sift@deathcycles=\count170
-\@vwid@loff=\dimen275
-\@vwid@roff=\dimen276
+\sift@deathcycles=\count173
+\@vwid@loff=\dimen283
+\@vwid@roff=\dimen284
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -928,26 +950,60 @@ works.aux)
 \openout1 = `"Implications of Decentralized Q-Learning Resource Allocation in W
 ireless Networks.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    ... okay on input line 46.
 
--- Lines per column: 56 (exact).
+-- Lines per column: 55 (approximate, difference = 8.4975pt).
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(54.2025pt, 668.4975pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=668.4975pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-48.6351pt
+* \headheight=12.0pt
+* \headsep=18.56761pt
+* \topskip=12.0pt
+* \footskip=40.5821pt
+* \marginparwidth=20.0pt
+* \marginparsep=10.0pt
+* \columnsep=12.0pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -958,55 +1014,86 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2016/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
-\c__siunitx_mathsf_int=\count171
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+\c__siunitx_mathsf_int=\count174
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count172
+\c__siunitx_mathtt_int=\count175
  [1
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
+Overfull \hbox (10.38936pt too wide) detected at line 153
+\OML/cmm/m/it/10 Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; a\OT1/cmr/m/n/10 ) = \
+U/msb/m/n/10 E[]\OML/cmm/m/it/10 r[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][]
+Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 
+j\OML/cmm/m/it/10 s[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 s; a[] \OT1/cmr/m/n/10
+ = \OML/cmm/m/it/10 a[]:
+ []
 
+
+Overfull \hbox (18.33722pt too wide) detected at line 158
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+  \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^K[]\OT1/cmr/m/n/10
+ )[](\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^K[][]r[] \
+OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[
+]; a[]\OT1/cmr/m/n/10 )[][]\OML/cmm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 5331) in paragraph at lines 158--165
+\OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^K[]$ \OT1/ptm/m/n/10 is the learn-ing
+ rate at time $\OML/cmm/m/it/10 t$\OT1/ptm/m/n/10 , and
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 188.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
  [2]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\OT1/ptm/m/n/8 wn-[]upf / Decentralized[]Qlearning[]Resource[]Allocation[]in[]W
+Ns . git$
+ []
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 250.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 260.
+               Default added (so using `tbp') on input line 261.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 284.
+               Default added (so using `tbp') on input line 285.
 
 File: images/ql_tuning_params_fixed_map_last_5000_iterations.eps Graphic file (
 type eps)
 <images/ql_tuning_params_fixed_map_last_5000_iterations.eps>
-Overfull \hbox (18.30118pt too wide) in paragraph at lines 286--287
+Overfull \hbox (41.42368pt too wide) in paragraph at lines 287--288
  [][] 
  []
 
+[3]
 File: images/alpha_vs_gamma_avg_tpt_sqrt_epsilon.eps Graphic file (type eps)
-<images/alpha_vs_gamma_avg_tpt_sqrt_epsilon.eps>
+ <images/alpha_vs_gamma_avg_tpt_sqrt_epsilon.eps>
 File: images/alpha_vs_gamma_std_sqrt_epsilon.eps Graphic file (type eps)
 
-<images/alpha_vs_gamma_std_sqrt_epsilon.eps> [3]
+<images/alpha_vs_gamma_std_sqrt_epsilon.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 316.
+               Default added (so using `tbp') on input line 317.
 
 File: images/e_1_a1_g095_ind_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_ind_tpt.eps>
@@ -1019,7 +1106,7 @@ File: images/e_01_a_01_g_005_ind_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_ind_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 343.
+               Default added (so using `tbp') on input line 344.
 
 File: images/e_1_a1_g095_avg_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_avg_tpt.eps>
@@ -1032,7 +1119,7 @@ File: images/e_01_a_01_g_005_avg_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_avg_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 370.
+               Default added (so using `tbp') on input line 371.
 
 File: images/e_1_a1_g095.eps Graphic file (type eps)
 <images/e_1_a1_g095.eps>
@@ -1042,16 +1129,10 @@ File: images/e_1_a_01_g_005.eps Graphic file (type eps)
 
 <images/e_1_a_01_g_005.eps>
 File: images/e_01_a_01_g_005.eps Graphic file (type eps)
- <images/e_01_a_01_g_005.eps>
-Underfull \vbox (badness 2556) has occurred while \output is active []
-
- [4]
-Underfull \hbox (badness 2285) in paragraph at lines 403--404
-[]\OT1/ptm/m/n/10 However, the com-pet-i-tive-ness of the pre-sented fully-
- []
-
+ <images/e_01_a_01_g_005.eps> [4]
 Missing character: There is no ń in font ptmr7t!
 Missing character: There is no ń in font ptmr7t!
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1072,13 +1153,13 @@ works.aux) )
 ### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 17476 strings out of 493591
- 339555 string characters out of 6143546
- 379214 words of memory out of 5000000
- 20657 multiletter control sequences out of 15000+600000
+ 17953 strings out of 493591
+ 346605 string characters out of 6143546
+ 390008 words of memory out of 5000000
+ 21123 multiletter control sequences out of 15000+600000
  33320 words of font info for 87 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 42i,24n,77p,10453b,3215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,77p,10453b,3231s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Implications of Decentralized Q-Learning Resource Allocation 
 in Wireless Networks.pdf (5 pages).
