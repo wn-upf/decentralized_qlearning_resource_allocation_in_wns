@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  26 SEP 2017 15:43
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  20 OCT 2017 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -945,29 +945,31 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+** ATTENTION: Overriding command lockouts (line 45).
+
 (./Implications of Decentralized Q-Learning Resource Allocation in Wireless Net
 works.aux)
 \openout1 = `"Implications of Decentralized Q-Learning Resource Allocation in W
 ireless Networks.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 47.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    ... okay on input line 47.
 
 -- Lines per column: 55 (approximate, difference = 8.4975pt).
 *geometry* driver: auto-detecting
@@ -1015,21 +1017,31 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count174
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count175
- [1
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 113.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1
 
 
 ]
-Overfull \hbox (10.38936pt too wide) detected at line 153
+
+LaTeX Warning: Citation `sutton1998reinforcement' on page 2 undefined on input 
+line 149.
+
+
+Overfull \hbox (10.38936pt too wide) detected at line 152
 \OML/cmm/m/it/10 Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; a\OT1/cmr/m/n/10 ) = \
 U/msb/m/n/10 E[]\OML/cmm/m/it/10 r[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][]
 Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 
@@ -1038,7 +1050,7 @@ j\OML/cmm/m/it/10 s[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 s; a[] \OT1/cmr/m/n/10
  []
 
 
-Overfull \hbox (18.33722pt too wide) detected at line 158
+Overfull \hbox (18.33722pt too wide) detected at line 157
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
   \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^K[]\OT1/cmr/m/n/10
  )[](\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^K[][]r[] \
@@ -1047,41 +1059,39 @@ OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 158--165
+Underfull \hbox (badness 5331) in paragraph at lines 157--164
 \OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^K[]$ \OT1/ptm/m/n/10 is the learn-ing
  rate at time $\OML/cmm/m/it/10 t$\OT1/ptm/m/n/10 , and
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 188.
+[2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
 \OT1/ptm/m/n/8 wn-[]upf / Decentralized[]Qlearning[]Resource[]Allocation[]in[]W
 Ns . git$
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 250.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 260.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 261.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 285.
+               Default added (so using `tbp') on input line 284.
 
 File: images/ql_tuning_params_fixed_map_last_5000_iterations.eps Graphic file (
 type eps)
 <images/ql_tuning_params_fixed_map_last_5000_iterations.eps>
-Overfull \hbox (41.42368pt too wide) in paragraph at lines 287--288
+Overfull \hbox (41.42368pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
@@ -1093,7 +1103,7 @@ File: images/alpha_vs_gamma_std_sqrt_epsilon.eps Graphic file (type eps)
 <images/alpha_vs_gamma_std_sqrt_epsilon.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 317.
+               Default added (so using `tbp') on input line 316.
 
 File: images/e_1_a1_g095_ind_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_ind_tpt.eps>
@@ -1106,7 +1116,7 @@ File: images/e_01_a_01_g_005_ind_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_ind_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 344.
+               Default added (so using `tbp') on input line 343.
 
 File: images/e_1_a1_g095_avg_tpt.eps Graphic file (type eps)
 <images/e_1_a1_g095_avg_tpt.eps>
@@ -1119,7 +1129,7 @@ File: images/e_01_a_01_g_005_avg_tpt.eps Graphic file (type eps)
  <images/e_01_a_01_g_005_avg_tpt.eps>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 371.
+               Default added (so using `tbp') on input line 370.
 
 File: images/e_1_a1_g095.eps Graphic file (type eps)
 <images/e_1_a1_g095.eps>
@@ -1146,20 +1156,24 @@ Before submitting the final camera ready copy, remember to:
 
 [5]
 (./Implications of Decentralized Q-Learning Resource Allocation in Wireless Net
-works.aux) )
+works.aux)
+
+LaTeX Warning: There were undefined references.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 17953 strings out of 493591
- 346605 string characters out of 6143546
- 390008 words of memory out of 5000000
- 21123 multiletter control sequences out of 15000+600000
- 33320 words of font info for 87 fonts, out of 8000000 for 9000
+ 17976 strings out of 493591
+ 346955 string characters out of 6143546
+ 389067 words of memory out of 5000000
+ 21142 multiletter control sequences out of 15000+600000
+ 33634 words of font info for 88 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 42i,24n,77p,10453b,3231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,77p,10453b,3251s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Implications of Decentralized Q-Learning Resource Allocation 
 in Wireless Networks.pdf (5 pages).

@@ -42,6 +42,7 @@
 \usepackage[font=scriptsize]{subcaption}
 
 %\setlength{\belowcaptionskip}{-1pt}
+\IEEEoverridecommandlockouts \IEEEpubid{\makebox[\columnwidth]{ 978-1-5386-3531-5/17/\$31.00~\copyright~2017 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }}
 
 \begin{document}
 	
@@ -79,16 +80,14 @@
 		We identify the cause of this variability as the adversarial setting of our setup, in which the most played actions provide intermittent good/poor performance depending on the neighbouring decisions. We also evaluate the effect of the intrinsic learning parameters of the algorithm on this variability.		
 	\end{abstract}
 	
-	\IEEEpeerreviewmaketitle
-	
-	
+	\IEEEpeerreviewmaketitle	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%  I. INTRODUCTION %%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Introduction}
 	% no \IEEEPARstart	
-	Reinforcement Learning (RL) has recently spread use in the wireless communications field to solve many kinds of problems such as Access Point (AP) association\cite{chen2010ap}, channel selection \cite{maghsudi2015channel} or transmit power adjustment \cite{maghsudi2015joint}, as it allows learning good-performing configurations only from the observed results. Among these, Q-learning has been applied to dynamic channel assignment in mobile networks in \cite{nie1999qlearning} and to automatic channel selection in Femto Cell networks in \cite{bennis2010q}. However, to the best of our knowledge, the case of a fully decentralized scenario where nodes do not have knowledge from each other, has not yet been considered.  
+	Reinforcement Learning (RL) has recently spread use in the wireless communications field to solve many kinds of problems such as Access Point (AP) association \cite{chen2010ap}, channel selection \cite{maghsudi2015channel} or transmit power adjustment \cite{maghsudi2015joint}, as it allows learning good-performing configurations only from the observed results. Among these, Q-learning has been applied to dynamic channel assignment in mobile networks in \cite{nie1999qlearning} and to automatic channel selection in Femto Cell networks in \cite{bennis2010q}. However, to the best of our knowledge, the case of a fully decentralized scenario where nodes do not have knowledge from each other, has not yet been considered.  
 	
 	In this work we propose a stateless variation of Q-learning in which nodes select the transmission power and channel to use solely based on their resulting throughput. We concentrate on a fully decentralized scenario where no information about the actions and resulting performance of the other nodes is available to the learners. Note that inferring the throughput of neighbouring nodes allocated to different channels is costly as periodic sensing in the other channels would then be needed. We aim to characterize the performance of Q-learning in such scenarios, obtaining insight on the most played actions (i.e., channel and transmit power selected) and the resulting performance. We observe that when no information about the neighbours is available to the learners, these will tend to apply selfish strategies that result in alternating good/poor performance depending on the actions of the others. In such scenarios, we show that the use of Q-learning allows each network to find the best-performing actions, though without reaching a steady solution. Note that achieving a steady solution in a decentralized environment relies in finding a Nash Equilibrium, a concept used in Game Theory to define a set of individual strategies that maximize the profits of each player in a non-cooperative game, regardless of the others' strategy. Formally, a set of best player actions $a^* = (a_1^*, ..., a_n^*) \in A$ leads to a Nash Equilibrium if $a_i^* \in B_i(a_{-i}^*), \forall i \in N$, where $B_i(a_{-i})$ is the best response to the others actions ($a_{-i}$). Thus, the consequences of not reaching a Nash Equilibrium can have an impact on performance variability.
 	
@@ -141,7 +140,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Decentralized Stateless Q-learning for enhancing Spatial Reuse in WNs}
 	\label{section:qlearning}	
-	Q-learning \cite{sutton1998reinforcement, watkins1992q} is an RL technique that enables an agent to learn the optimal policy to follow in a given environment. A set of possible states describing the environment and actions are defined in this model. In particular, an agent maintains an estimate of the expected long-term discounted reward for each state-action pair, and selects actions with the aim of maximizing it. The expected cumulative reward $\text{V}^\pi(s)$ is given by:
+	Q-learning \cite{watkins1992q} is an RL technique that enables an agent to learn the optimal policy to follow in a given environment. A set of possible states describing the environment and actions are defined in this model. In particular, an agent maintains an estimate of the expected long-term discounted reward for each state-action pair, and selects actions with the aim of maximizing it. The expected cumulative reward $\text{V}^\pi(s)$ is given by:
 	\begin{equation}
 	\label{eq:ql_reward_policy}
 	\text{V}^\pi(s) = \lim_{N \rightarrow \infty} \mathop{\mathbb{E}}\Big(\sum_{t=1}^{N} r_t^\pi(s)\Big),
@@ -161,7 +160,7 @@
 	theoretically
 	%%
 	achieved with probability 1 if $\sum_{t=0}^{\infty} \alpha_t = \infty$, and $\sum_{t=0}^{\infty} \alpha_t^2 < \infty$, which satisfies that $\underset{t \rightarrow \infty}{\lim} \hat{Q}(s,a) = Q^*(s,a)$.
-	Since we focus on a completely decentralized scenario where no information about the other nodes is available, the system can then be fully described by the set of actions and rewards.\footnote{We note that local information such as the observed instantaneous channel quality could be incorporated in the state definition. However, such a description of the system entails increased complexity.} Thus, we propose using a stateless variation of the original Q-learning algorithm. To implement decentralized learning to the resource allocation problem, we consider each WN to be an agent running Stateless Q-learning through an $\varepsilon$-greedy action-selection strategy, so that actions $a \in \mathcal{A}$ correspond to all the possible configurations that can be chosen with respect to the channel and transmit power. During the learning process we assume that WNs select actions sequentially, so that at each learning iteration, every agent takes an action in an ordered way. The order at which WNs choose an action at each iteration is randomly selected at the beginning of it. The reward after choosing an action is set as:
+	Since we focus on a completely decentralized scenario where no information about the other nodes is available, the system can then be fully described by the set of actions and rewards.\footnote{Local information like the observed instantaneous channel quality could be incorporated in the state definition. However, such a description of the system entails increased complexity.} Thus, we propose using a stateless variation of the original Q-learning algorithm. To implement decentralized learning to the resource allocation problem, we consider each WN to be an agent running Stateless Q-learning through an $\varepsilon$-greedy action-selection strategy, so that actions $a \in \mathcal{A}$ correspond to all the possible configurations that can be chosen with respect to the channel and transmit power. During the learning process we assume that WNs select actions sequentially, so that at each learning iteration, every agent takes an action in an ordered way. The order at which WNs choose an action at each iteration is randomly selected at the beginning of it. The reward after choosing an action is set as:
 	\begin{equation}
 	r_{i,t} = \frac{\Gamma_{i,t}}{\Gamma_i^*},
 	\label{eq:reward_generation}
@@ -207,7 +206,7 @@
 	%%% IV. SIMULATION %%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Performance Evaluation}
 	\label{section:performance_evaluation}	
-	In this section we introduce the simulation parameters and describe the experiments.\footnote{The code used for simulations can be found at \url{https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs.git} (Commit: eb4042a1830c8ea30b7eae3d72a51afe765a8d86).} Then, we show the main results.
+	In this section we introduce the simulation parameters, describe the experiments.\footnote{The code used for simulations can be found at \url{https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs.git} (Commit: eb4042a1830c8ea30b7eae3d72a51afe765a8d86).} and show the main results.
 	
 	%------------------------
 	% Simulation Parameters
@@ -279,7 +278,7 @@
 	%------------------------
 	\subsection{Input Parameters Analysis}
 	\label{section:practical_analysis}	
-	We first analyse the effects of modifying $\alpha$ (the learning rate), $\gamma$ (the discount factor) and $\varepsilon_0$ (the initial exploration coefficient of the $\varepsilon$-greedy update rule) with respect to the achieved network throughput. We run simulations of $10000$ iterations and capture the results of the last $5000$ iterations to ensure that the initial transitory phase has ended. Each simulation is repeated $100$ times for averaging purposes. 
+	We first analyse the effects of modifying $\alpha$ (learning rate), $\gamma$ (discount factor) and $\varepsilon_0$ (initial exploration coefficient) with respect to the achieved network throughput. We run simulations of $10000$ iterations and capture the results of the last $5000$ iterations to ensure that the initial transitory phase has ended. Each simulation is repeated $100$ times for averaging purposes. 
 	
 	Figure \ref{fig:ql_alpha_gamma_epsilon_evaluation} shows the average aggregate throughput achieved for each of the proposed combinations. It can be observed that the best results with respect to the aggregate throughput, regarding both average and variance, are achieved when $\alpha = 1$, $\gamma = 0.95$ and $\varepsilon_0 = 1$. This means that for achieving the best results (i.e., high average aggregate throughput and low variance), the immediate reward of a given action must be considered rather than any previous information ($\alpha = 1$). We see that the difference between the pay-off offered by the best action and the current one must also be high ($\gamma = 0.95$). In addition, exploration must be highly boosted at the beginning ($\varepsilon_0=1$). For this setting, the resulting throughput ($902.739$ Mbps) represents $80.29$\% of the one provided by the optimal configuration that maximizes the aggregate throughput (shown in Table \ref{tbl:optimal_configurations}). Regarding proportional fairness, the algorithm's resulting throughput is only $1.32$\% higher than the optimal. 
 	\begin{figure}[]
@@ -363,7 +362,7 @@
 			\caption{$\varepsilon_0=0.1, \alpha=0.1, \gamma=0.05$}
 			\label{fig:e_0.1_a_0.1_g_0.05_avg_tpt}
 		\end{subfigure}
-		\caption{Average throughput experienced by each WN during the last 5000 iterations of a total of 10000 iterations (in a single simulation run) and for different $\varepsilon_0$, $\alpha$ and $\gamma$.}
+		\caption{Average throughput experienced per WN during the last 5000 iterations of a total of 10000 iterations (in a single simulation run) and for different $\varepsilon_0$, $\alpha$ and $\gamma$.}
 		\label{fig:ql_params_eval_average_tpt}
 	\end{figure}
 	
@@ -403,7 +402,7 @@
 	
 	However, the competitiveness of the presented fully-decentralized environment involves the non-existence of a Nash Equilibrium. Thus, we have also identified high variability in the experienced individual throughput due to the constant changes of the played actions, motivated by the fact that the reward generated by each action changes according to the opponents' ones. We have evaluated the impact of the parameters intrinsic to the learning algorithm on this variability showing that it can be reduced by decreasing the exploration degree and learning rate. The individual reduction on the throughput variability occurs at the expense of losing aggregate performance. This variability can potentially result in negative effects on the overall WN's performance. Throughput fluctuation in higher layers of the protocol stack can have severe consequences depending on the time scale at which they occur (e.g., noticing high fluctuations may trigger congestion recovery procedures in TCP, which may harm the performance). 
 	
-	We left for future work to further extend the decentralized approach in order to find collaborative algorithms that allow the neighbouring WNs to reach an equilibrium that grants acceptable individual performance. Acquiring any kind of knowledge about the neighbouring WNs is assumed to solve the variability issues arisen from decentralization. This information may be directly exchanged or inferred from observations. 
+	We left for future work to further extend the decentralized approach to find collaborative algorithms that allow the neighbouring WNs to reach an equilibrium that grants acceptable individual performance. Acquiring any kind of knowledge about the neighbouring WNs (by direct exchange or inferred from observation) is assumed to solve the decentralization variability issues. 
 	%% NEW CONTENT TO SOLVE COMMENTS FROM REVIEWER 3
 	Furthermore, other learning approaches are intended to be analysed in the future for performance comparison in the resource allocation problem. 
 	%%	
@@ -428,9 +427,7 @@
 		\bibitem{nie1999qlearning} Nie, J., \& Haykin, S. (1999). A Q-learning-based dynamic channel assignment technique for mobile communication systems. IEEE Transactions on Vehicular Technology, 48(5), 1676-1687.
 		
 		\bibitem{bennis2010q} Bennis, M., \& Niyato, D. (2010, December). A Q-learning based approach to interference avoidance in self-organized femtocell networks. In GLOBECOM Workshops (GC Wkshps), 2010 IEEE (pp. 706-710). IEEE.
-		
-		\bibitem{sutton1998reinforcement} Sutton, R. S., \& Barto, A. G. (1998). Reinforcement learning: An introduction (Vol. 1, No. 1). Cambridge: MIT press.
-		
+
 		\bibitem{watkins1992q} Watkins, C. J., \& Dayan, P. (1992). Q-learning. Machine learning, 8 (3-4), 279-292.
 		
 		\bibitem{bellalta2016ax} Bellalta, B. "IEEE 802.11 ax: High-efficiency WLANs." IEEE Wireless Communications 23.1 (2016): 38-46.  
