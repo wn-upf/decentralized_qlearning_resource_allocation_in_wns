@@ -1,4 +1,4 @@
-# Collaborative Spatial Reuse in Wireless Networks via Selfish Multi-Armed Bandits
+# Implications of Decentralized Q-learning Resource Allocation in Wireless Networks
 ### Authors
 * [Francesc Wilhelmi](https://github.com/fwilhelmi)
 * [Boris Bellalta](http://www.dtic.upf.edu/~bbellalt/)
