@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.1)  20 OCT 2017 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.1)  6 NOV 2017 08:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -26,7 +26,7 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
+-- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
@@ -152,32 +152,33 @@ Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: xetex.def on input line 144.
+Package color Info: Driver file: pdftex.def on input line 144.
 
-(/usr/local/texlive/2016/texmf-dist/tex/xelatex/xetex-def/xetex.def
-File: xetex.def 2016/04/06 v4.08 LaTeX color/graphics driver for XeTeX (TeX Liv
-e/RRM/JK)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
+)
+\Gread@gobject=\count97
+))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count97
-\calc@Bcount=\count98
+\calc@Acount=\count98
+\calc@Bcount=\count99
 \calc@Adimen=\dimen134
 \calc@Bdimen=\dimen135
 \calc@Askip=\skip44
 \calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count99
+\calc@Ccount=\count100
 \calc@Cskip=\skip46
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -203,13 +204,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count100
+\inf@bad=\count101
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count101
-\leftroot@=\count102
+\uproot@=\count102
+\leftroot@=\count103
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count103
-\DOTSCASE@=\count104
+\classnum@=\count104
+\DOTSCASE@=\count105
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
@@ -218,15 +219,15 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen138
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count105
-\c@MaxMatrixCols=\count106
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
 \dotsspace@=\muskip10
-\c@parentequation=\count107
-\dspbrk@lvl=\count108
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
 \tag@help=\toks18
-\row@=\count109
-\column@=\count110
-\maxfields@=\count111
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
 \andhelp@=\toks19
 \eqnshift@=\dimen139
 \alignsep@=\dimen140
@@ -245,7 +246,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count112
+\g_MT_multlinerow_int=\count113
 \l_MT_multwidth_dim=\dimen145
 \origjot=\skip50
 \l_MT_shortvdotswithinadjustabove_dim=\dimen146
@@ -256,16 +257,15 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_shortintertext_sep=\dimen151
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count113
-\c@ALC@line=\count114
-\c@ALC@rem=\count115
-\c@ALC@depth=\count116
+\c@ALC@unique=\count114
+\c@ALC@line=\count115
+\c@ALC@rem=\count116
+\c@ALC@depth=\count117
 \ALC@tlm=\skip51
 \algorithmicindent=\skip52
 )
@@ -275,7 +275,7 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
@@ -292,8 +292,9 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \minrowclearance=\skip55
 )
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count117
+\rownum=\count118
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -320,7 +321,7 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 96.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 )
 \Gin@req@height=\dimen155
 \Gin@req@width=\dimen156
@@ -357,11 +358,11 @@ ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
 ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
 \fi .
-\c@ContinuedFloat=\count118
+\c@ContinuedFloat=\count119
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count119
-\c@subtable=\count120
+\c@subfigure=\count120
+\c@subtable=\count121
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
@@ -462,24 +463,24 @@ L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
 L3 Module: l3str 2016/03/24 v6441 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2016/03/24 v6441 L3 Integers
-\c_max_int=\count121
-\l_tmpa_int=\count122
-\l_tmpb_int=\count123
-\g_tmpa_int=\count124
-\g_tmpb_int=\count125
+\c_max_int=\count122
+\l_tmpa_int=\count123
+\l_tmpb_int=\count124
+\g_tmpa_int=\count125
+\g_tmpb_int=\count126
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count126
+\g__prg_map_int=\count127
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
 L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
 L3 Module: l3msg 2016/03/26 v6464 L3 Messages
 L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
-\l_iow_line_count_int=\count127
-\l__iow_target_count_int=\count128
-\l__iow_current_line_int=\count129
-\l__iow_current_word_int=\count130
-\l__iow_current_indentation_int=\count131
+\l_iow_line_count_int=\count128
+\l__iow_target_count_int=\count129
+\l__iow_current_line_int=\count130
+\l__iow_current_word_int=\count131
+\l__iow_current_indentation_int=\count132
 L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \c_zero_dim=\dimen164
 \c_max_dim=\dimen165
@@ -500,18 +501,18 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count132
-\l_keys_choice_int=\count133
+\g__keyval_level_int=\count133
+\l_keys_choice_int=\count134
 L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
-\c__fp_leading_shift_int=\count134
-\c__fp_middle_shift_int=\count135
-\c__fp_trailing_shift_int=\count136
-\c__fp_big_leading_shift_int=\count137
-\c__fp_big_middle_shift_int=\count138
-\c__fp_big_trailing_shift_int=\count139
-\c__fp_Bigg_leading_shift_int=\count140
-\c__fp_Bigg_middle_shift_int=\count141
-\c__fp_Bigg_trailing_shift_int=\count142
+\c__fp_leading_shift_int=\count135
+\c__fp_middle_shift_int=\count136
+\c__fp_trailing_shift_int=\count137
+\c__fp_big_leading_shift_int=\count138
+\c__fp_big_middle_shift_int=\count139
+\c__fp_big_trailing_shift_int=\count140
+\c__fp_Bigg_leading_shift_int=\count141
+\c__fp_Bigg_middle_shift_int=\count142
+\c__fp_Bigg_trailing_shift_int=\count143
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box30
 \l_tmpa_box=\box31
@@ -559,17 +560,18 @@ L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
 \l__coffin_scaled_width_dim=\dimen194
 L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
-File: l3xdvidpfmx.def 2016/03/26 v6465 L3 Experimental driver: xdvipdfmx
+(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count144
 \l__driver_tmp_box=\box45
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count143
-\l__xparse_m_args_int=\count144
-\l__xparse_mandatory_args_int=\count145
-\l__xparse_processor_int=\count146
-\l__xparse_v_nesting_int=\count147
+\l__xparse_current_arg_int=\count145
+\l__xparse_m_args_int=\count146
+\l__xparse_mandatory_args_int=\count147
+\l__xparse_processor_int=\count148
+\l__xparse_v_nesting_int=\count149
 )
 Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
 
@@ -578,27 +580,27 @@ Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box46
 \l__siunitx_tmp_dim=\dimen195
-\l__siunitx_tmp_int=\count148
-\l__siunitx_number_mantissa_length_int=\count149
-\l__siunitx_number_uncert_length_int=\count150
-\l__siunitx_round_int=\count151
-\l__siunitx_process_decimal_int=\count152
-\l__siunitx_process_uncertainty_int=\count153
-\l__siunitx_process_fixed_int=\count154
-\l__siunitx_process_integer_min_int=\count155
-\l__siunitx_process_precision_int=\count156
-\l__siunitx_group_min_int=\count157
+\l__siunitx_tmp_int=\count150
+\l__siunitx_number_mantissa_length_int=\count151
+\l__siunitx_number_uncert_length_int=\count152
+\l__siunitx_round_int=\count153
+\l__siunitx_process_decimal_int=\count154
+\l__siunitx_process_uncertainty_int=\count155
+\l__siunitx_process_fixed_int=\count156
+\l__siunitx_process_integer_min_int=\count157
+\l__siunitx_process_precision_int=\count158
+\l__siunitx_group_min_int=\count159
 \l__siunitx_angle_marker_box=\box47
 \l__siunitx_angle_unit_box=\box48
 \l__siunitx_angle_marker_dim=\dimen196
 \l__siunitx_angle_unit_dim=\dimen197
-\l__siunitx_unit_int=\count158
-\l__siunitx_unit_denominator_int=\count159
-\l__siunitx_unit_numerator_int=\count160
-\l__siunitx_unit_prefix_int=\count161
-\l__siunitx_unit_prefix_base_int=\count162
-\l__siunitx_unit_prefix_gram_int=\count163
-\l__siunitx_number_product_int=\count164
+\l__siunitx_unit_int=\count160
+\l__siunitx_unit_denominator_int=\count161
+\l__siunitx_unit_numerator_int=\count162
+\l__siunitx_unit_prefix_int=\count163
+\l__siunitx_unit_prefix_base_int=\count164
+\l__siunitx_unit_prefix_gram_int=\count165
+\l__siunitx_number_product_int=\count166
 \c__siunitx_one_fill_skip=\skip62
 \l__siunitx_table_unit_align_skip=\skip63
 \l__siunitx_table_exponent_dim=\dimen198
@@ -778,16 +780,20 @@ Package etexcmds Info: Could not find \expanded.
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
-Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
-orted.
-
-)) (/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks24
 \SOUL@lasttoken=\toks25
@@ -817,7 +823,7 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count165
+\etb@tempcnta=\count167
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -830,14 +836,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
-Invalid UTF-8 byte or sequence at line 275 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 290 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 540 replaced by U+FFFD.
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count166
-Invalid UTF-8 byte or sequence at line 1311 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 1313 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 1315 replaced by U+FFFD.
+\c@AlgoLine=\count168
 \algocf@hangindent=\skip67
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/relsize/relsize.sty
@@ -879,15 +879,15 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algoheightrule=\skip82
 \algotitleheightruledefault=\skip83
 \algotitleheightrule=\skip84
-\c@algocfline=\count167
-\c@algocfproc=\count168
-\c@algocf=\count169
+\c@algocfline=\count169
+\c@algocfproc=\count170
+\c@algocf=\count171
 \algocf@algoframe=\box59
 \algocf@algobox=\box60
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen274
-\c@nlinenum=\count170
+\c@nlinenum=\count172
 \TeXr@lab=\toks29
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjustbox.sty
@@ -901,7 +901,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks30
 \XKV@tempa@toks=\toks31
 )
-\XKV@depth=\count171
+\XKV@depth=\count173
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -919,10 +919,10 @@ Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \tc@lly=\dimen276
 \tc@urx=\dimen277
 \tc@ury=\dimen278
-Package trimclip Info: Using driver 'tc-xetex.def'.
+Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/tc-xetex.def
-File: tc-xetex.def 2012/05/13 v1.0 Clipping driver for xetex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen279
 \adjbox@Height=\dimen280
@@ -931,12 +931,12 @@ File: tc-xetex.def 2012/05/13 v1.0 Clipping driver for xetex
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count172
+\c@checkoddpage=\count174
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box62
-\sift@deathcycles=\count173
+\sift@deathcycles=\count175
 \@vwid@loff=\dimen283
 \@vwid@roff=\dimen284
 ))
@@ -945,37 +945,37 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-** ATTENTION: Overriding command lockouts (line 45).
+** ATTENTION: Overriding command lockouts (line 44).
 
 (./Implications of Decentralized Q-Learning Resource Allocation in Wireless Net
 works.aux)
 \openout1 = `"Implications of Decentralized Q-Learning Resource Allocation in W
 ireless Networks.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    ... okay on input line 46.
 
 -- Lines per column: 55 (approximate, difference = 8.4975pt).
 *geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: pdftex
 * paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1006,6 +1006,20 @@ LaTeX Font Info:    ... okay on input line 47.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count176
+\scratchdimen=\dimen285
+\scratchbox=\box63
+\nofMPsegments=\count177
+\nofMParguments=\count178
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count179
+\MPscratchDim=\dimen286
+\MPnumerator=\count180
+\makeMPintoPDFobject=\count181
+\everyMPtoPDFconversion=\toks33
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -1016,32 +1030,32 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2016/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
-\c__siunitx_mathsf_int=\count174
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+\c__siunitx_mathsf_int=\count182
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count175
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 113.
+\c__siunitx_mathtt_int=\count183
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 112.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1
+) [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
 LaTeX Warning: Citation `sutton1998reinforcement' on page 2 undefined on input 
-line 149.
+line 148.
 
 
-Overfull \hbox (10.38936pt too wide) detected at line 152
+Overfull \hbox (10.38936pt too wide) detected at line 151
 \OML/cmm/m/it/10 Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; a\OT1/cmr/m/n/10 ) = \
 U/msb/m/n/10 E[]\OML/cmm/m/it/10 r[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][]
 Q[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 
@@ -1050,98 +1064,371 @@ j\OML/cmm/m/it/10 s[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 s; a[] \OT1/cmr/m/n/10
  []
 
 
-Overfull \hbox (18.33722pt too wide) detected at line 157
+Overfull \hbox (18.33722pt too wide) detected at line 156
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
-  \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^K[]\OT1/cmr/m/n/10
- )[](\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^K[][]r[] \
-OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[
-]; a[]\OT1/cmr/m/n/10 )[][]\OML/cmm/m/it/10 ;
+  \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 )
+[](\OML/cmm/m/it/10 s[]; a[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 [][]r[] \OT1/
+cmr/m/n/10 + \OML/cmm/m/it/10 ^^M[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; a
+[]\OT1/cmr/m/n/10 )[][]\OML/cmm/m/it/10 ;
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 157--164
-\OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^K[]$ \OT1/ptm/m/n/10 is the learn-ing
- rate at time $\OML/cmm/m/it/10 t$\OT1/ptm/m/n/10 , and
+Underfull \hbox (badness 5331) in paragraph at lines 156--163
+\OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 []$ \OT1/ptm/m/n/10 is the learn-ing r
+ate at time $\OML/cmm/m/it/10 t$\OT1/ptm/m/n/10 , and
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 186.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--209
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
 \OT1/ptm/m/n/8 wn-[]upf / Decentralized[]Qlearning[]Resource[]Allocation[]in[]W
 Ns . git$
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 248.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 260.
+               Default added (so using `tbp') on input line 259.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 284.
+               Default added (so using `tbp') on input line 283.
 
-File: images/ql_tuning_params_fixed_map_last_5000_iterations.eps Graphic file (
-type eps)
-<images/ql_tuning_params_fixed_map_last_5000_iterations.eps>
-Overfull \hbox (41.42368pt too wide) in paragraph at lines 286--287
+Package epstopdf Info: Source file: <images/ql_tuning_params_fixed_map_last_500
+0_iterations.eps>
+(epstopdf)                    date: 2017-05-30 09:47:17
+(epstopdf)                    size: 77755 bytes
+(epstopdf)             Output file: <images/ql_tuning_params_fixed_map_last_500
+0_iterations-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:40
+(epstopdf)                    size: 20541 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/ql_tuning_params_fi
+xed_map_last_5000_iterations-eps-converted-to.pdf images/ql_tuning_params_fixed
+_map_last_5000_iterations.eps>
+(epstopdf)             \includegraphics on input line 285.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/ql_tuning_params_fixed_map_last_5000_iterations-eps-converted-to.pdf, i
+d=22, 699.61375pt x 393.47pt>
+File: images/ql_tuning_params_fixed_map_last_5000_iterations-eps-converted-to.p
+df Graphic file (type pdf)
+
+<use images/ql_tuning_params_fixed_map_last_5000_iterations-eps-converted-to.pd
+f>
+Package pdftex.def Info: images/ql_tuning_params_fixed_map_last_5000_iterations
+-eps-converted-to.pdf used on input line 285.
+(pdftex.def)             Requested size: 270.30118pt x 152.02376pt.
+
+Overfull \hbox (41.42368pt too wide) in paragraph at lines 285--286
  [][] 
  []
 
 [3]
-File: images/alpha_vs_gamma_avg_tpt_sqrt_epsilon.eps Graphic file (type eps)
- <images/alpha_vs_gamma_avg_tpt_sqrt_epsilon.eps>
-File: images/alpha_vs_gamma_std_sqrt_epsilon.eps Graphic file (type eps)
+Package epstopdf Info: Source file: <images/alpha_vs_gamma_avg_tpt_sqrt_epsilon
+.eps>
+(epstopdf)                    date: 2017-05-19 20:01:41
+(epstopdf)                    size: 48081 bytes
+(epstopdf)             Output file: <images/alpha_vs_gamma_avg_tpt_sqrt_epsilon
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:41
+(epstopdf)                    size: 12218 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/alpha_vs_gamma_avg_
+tpt_sqrt_epsilon-eps-converted-to.pdf images/alpha_vs_gamma_avg_tpt_sqrt_epsilo
+n.eps>
+(epstopdf)             \includegraphics on input line 294.
+Package epstopdf Info: Output file is already uptodate.
 
-<images/alpha_vs_gamma_std_sqrt_epsilon.eps>
+<images/alpha_vs_gamma_avg_tpt_sqrt_epsilon-eps-converted-to.pdf, id=33, 553.06
+625pt x 393.47pt>
+File: images/alpha_vs_gamma_avg_tpt_sqrt_epsilon-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use images/alpha_vs_gamma_avg_tpt_sqrt_epsilon-eps-converted-to.pdf>
+Package pdftex.def Info: images/alpha_vs_gamma_avg_tpt_sqrt_epsilon-eps-convert
+ed-to.pdf used on input line 294.
+(pdftex.def)             Requested size: 150.32504pt x 106.94077pt.
+Package epstopdf Info: Source file: <images/alpha_vs_gamma_std_sqrt_epsilon.eps
+>
+(epstopdf)                    date: 2017-05-19 20:01:28
+(epstopdf)                    size: 47594 bytes
+(epstopdf)             Output file: <images/alpha_vs_gamma_std_sqrt_epsilon-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:42
+(epstopdf)                    size: 11995 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/alpha_vs_gamma_std_
+sqrt_epsilon-eps-converted-to.pdf images/alpha_vs_gamma_std_sqrt_epsilon.eps>
+(epstopdf)             \includegraphics on input line 299.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/alpha_vs_gamma_std_sqrt_epsilon-eps-converted-to.pdf, id=34, 553.06625p
+t x 393.47pt>
+File: images/alpha_vs_gamma_std_sqrt_epsilon-eps-converted-to.pdf Graphic file 
+(type pdf)
+
+<use images/alpha_vs_gamma_std_sqrt_epsilon-eps-converted-to.pdf>
+Package pdftex.def Info: images/alpha_vs_gamma_std_sqrt_epsilon-eps-converted-t
+o.pdf used on input line 299.
+(pdftex.def)             Requested size: 150.32504pt x 106.94077pt.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 316.
+               Default added (so using `tbp') on input line 315.
 
-File: images/e_1_a1_g095_ind_tpt.eps Graphic file (type eps)
-<images/e_1_a1_g095_ind_tpt.eps>
-File: images/e_01_a_1_g_095_ind_tpt.eps Graphic file (type eps)
- <images/e_01_a_1_g_095_ind_tpt.eps>
-File: images/e_1_a_01_g_005_ind_tpt.eps Graphic file (type eps)
+Package epstopdf Info: Source file: <images/e_1_a1_g095_ind_tpt.eps>
+(epstopdf)                    date: 2017-05-22 12:47:28
+(epstopdf)                    size: 1420234 bytes
+(epstopdf)             Output file: <images/e_1_a1_g095_ind_tpt-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:42
+(epstopdf)                    size: 107959 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a1_g095_ind_tpt
+-eps-converted-to.pdf images/e_1_a1_g095_ind_tpt.eps>
+(epstopdf)             \includegraphics on input line 318.
+Package epstopdf Info: Output file is already uptodate.
 
-<images/e_1_a_01_g_005_ind_tpt.eps>
-File: images/e_01_a_01_g_005_ind_tpt.eps Graphic file (type eps)
- <images/e_01_a_01_g_005_ind_tpt.eps>
+<images/e_1_a1_g095_ind_tpt-eps-converted-to.pdf, id=35, 509.905pt x 373.395pt>
+File: images/e_1_a1_g095_ind_tpt-eps-converted-to.pdf Graphic file (type pdf)
+<use images/e_1_a1_g095_ind_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a1_g095_ind_tpt-eps-converted-to.pdf used o
+n input line 318.
+(pdftex.def)             Requested size: 105.69774pt x 77.4011pt.
+Package epstopdf Info: Source file: <images/e_01_a_1_g_095_ind_tpt.eps>
+(epstopdf)                    date: 2017-05-22 12:46:44
+(epstopdf)                    size: 1412534 bytes
+(epstopdf)             Output file: <images/e_01_a_1_g_095_ind_tpt-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:43
+(epstopdf)                    size: 61328 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_1_g_095_ind_
+tpt-eps-converted-to.pdf images/e_01_a_1_g_095_ind_tpt.eps>
+(epstopdf)             \includegraphics on input line 323.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_1_g_095_ind_tpt-eps-converted-to.pdf, id=36, 509.905pt x 373.395
+pt>
+File: images/e_01_a_1_g_095_ind_tpt-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use images/e_01_a_1_g_095_ind_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_1_g_095_ind_tpt-eps-converted-to.pdf use
+d on input line 323.
+(pdftex.def)             Requested size: 105.69774pt x 77.4011pt.
+Package epstopdf Info: Source file: <images/e_1_a_01_g_005_ind_tpt.eps>
+(epstopdf)                    date: 2017-05-22 12:46:59
+(epstopdf)                    size: 1428224 bytes
+(epstopdf)             Output file: <images/e_1_a_01_g_005_ind_tpt-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:44
+(epstopdf)                    size: 77813 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a_01_g_005_ind_
+tpt-eps-converted-to.pdf images/e_1_a_01_g_005_ind_tpt.eps>
+(epstopdf)             \includegraphics on input line 328.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_1_a_01_g_005_ind_tpt-eps-converted-to.pdf, id=37, 509.905pt x 373.395
+pt>
+File: images/e_1_a_01_g_005_ind_tpt-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use images/e_1_a_01_g_005_ind_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a_01_g_005_ind_tpt-eps-converted-to.pdf use
+d on input line 328.
+(pdftex.def)             Requested size: 105.69774pt x 77.4011pt.
+Package epstopdf Info: Source file: <images/e_01_a_01_g_005_ind_tpt.eps>
+(epstopdf)                    date: 2017-05-22 12:46:52
+(epstopdf)                    size: 1411573 bytes
+(epstopdf)             Output file: <images/e_01_a_01_g_005_ind_tpt-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:44
+(epstopdf)                    size: 59026 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_01_g_005_ind
+_tpt-eps-converted-to.pdf images/e_01_a_01_g_005_ind_tpt.eps>
+(epstopdf)             \includegraphics on input line 333.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_01_g_005_ind_tpt-eps-converted-to.pdf, id=38, 509.905pt x 373.39
+5pt>
+File: images/e_01_a_01_g_005_ind_tpt-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use images/e_01_a_01_g_005_ind_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_01_g_005_ind_tpt-eps-converted-to.pdf us
+ed on input line 333.
+(pdftex.def)             Requested size: 105.69774pt x 77.4011pt.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 343.
+               Default added (so using `tbp') on input line 342.
 
-File: images/e_1_a1_g095_avg_tpt.eps Graphic file (type eps)
-<images/e_1_a1_g095_avg_tpt.eps>
-File: images/e_01_a_1_g_095_avg_tpt.eps Graphic file (type eps)
- <images/e_01_a_1_g_095_avg_tpt.eps>
-File: images/e_1_a_01_g_005_avg_tpt.eps Graphic file (type eps)
+Package epstopdf Info: Source file: <images/e_1_a1_g095_avg_tpt.eps>
+(epstopdf)                    date: 2017-05-19 12:01:00
+(epstopdf)                    size: 16128 bytes
+(epstopdf)             Output file: <images/e_1_a1_g095_avg_tpt-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:45
+(epstopdf)                    size: 7500 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a1_g095_avg_tpt
+-eps-converted-to.pdf images/e_1_a1_g095_avg_tpt.eps>
+(epstopdf)             \includegraphics on input line 345.
+Package epstopdf Info: Output file is already uptodate.
 
-<images/e_1_a_01_g_005_avg_tpt.eps>
-File: images/e_01_a_01_g_005_avg_tpt.eps Graphic file (type eps)
- <images/e_01_a_01_g_005_avg_tpt.eps>
+<images/e_1_a1_g095_avg_tpt-eps-converted-to.pdf, id=39, 564.1075pt x 419.5675p
+t>
+File: images/e_1_a1_g095_avg_tpt-eps-converted-to.pdf Graphic file (type pdf)
+ <use images/e_1_a1_g095_avg_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a1_g095_avg_tpt-eps-converted-to.pdf used o
+n input line 345.
+(pdftex.def)             Requested size: 105.69774pt x 78.61108pt.
+Package epstopdf Info: Source file: <images/e_01_a_1_g_095_avg_tpt.eps>
+(epstopdf)                    date: 2017-05-19 12:01:24
+(epstopdf)                    size: 15445 bytes
+(epstopdf)             Output file: <images/e_01_a_1_g_095_avg_tpt-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:45
+(epstopdf)                    size: 7402 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_1_g_095_avg_
+tpt-eps-converted-to.pdf images/e_01_a_1_g_095_avg_tpt.eps>
+(epstopdf)             \includegraphics on input line 350.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_1_g_095_avg_tpt-eps-converted-to.pdf, id=40, 564.1075pt x 419.56
+75pt>
+File: images/e_01_a_1_g_095_avg_tpt-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use images/e_01_a_1_g_095_avg_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_1_g_095_avg_tpt-eps-converted-to.pdf use
+d on input line 350.
+(pdftex.def)             Requested size: 105.69774pt x 78.61108pt.
+Package epstopdf Info: Source file: <images/e_1_a_01_g_005_avg_tpt.eps>
+(epstopdf)                    date: 2017-05-19 12:01:44
+(epstopdf)                    size: 15445 bytes
+(epstopdf)             Output file: <images/e_1_a_01_g_005_avg_tpt-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:46
+(epstopdf)                    size: 7400 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a_01_g_005_avg_
+tpt-eps-converted-to.pdf images/e_1_a_01_g_005_avg_tpt.eps>
+(epstopdf)             \includegraphics on input line 355.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_1_a_01_g_005_avg_tpt-eps-converted-to.pdf, id=41, 564.1075pt x 419.56
+75pt>
+File: images/e_1_a_01_g_005_avg_tpt-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use images/e_1_a_01_g_005_avg_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a_01_g_005_avg_tpt-eps-converted-to.pdf use
+d on input line 355.
+(pdftex.def)             Requested size: 105.69774pt x 78.61108pt.
+Package epstopdf Info: Source file: <images/e_01_a_01_g_005_avg_tpt.eps>
+(epstopdf)                    date: 2017-05-19 12:00:54
+(epstopdf)                    size: 15449 bytes
+(epstopdf)             Output file: <images/e_01_a_01_g_005_avg_tpt-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:46
+(epstopdf)                    size: 7407 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_01_g_005_avg
+_tpt-eps-converted-to.pdf images/e_01_a_01_g_005_avg_tpt.eps>
+(epstopdf)             \includegraphics on input line 360.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_01_g_005_avg_tpt-eps-converted-to.pdf, id=42, 564.1075pt x 419.5
+675pt>
+File: images/e_01_a_01_g_005_avg_tpt-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use images/e_01_a_01_g_005_avg_tpt-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_01_g_005_avg_tpt-eps-converted-to.pdf us
+ed on input line 360.
+(pdftex.def)             Requested size: 105.69774pt x 78.61108pt.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 370.
+               Default added (so using `tbp') on input line 369.
 
-File: images/e_1_a1_g095.eps Graphic file (type eps)
-<images/e_1_a1_g095.eps>
-File: images/e_01_a_1_g_095.eps Graphic file (type eps)
- <images/e_01_a_1_g_095.eps>
-File: images/e_1_a_01_g_005.eps Graphic file (type eps)
+Package epstopdf Info: Source file: <images/e_1_a1_g095.eps>
+(epstopdf)                    date: 2017-05-22 12:35:56
+(epstopdf)                    size: 31076 bytes
+(epstopdf)             Output file: <images/e_1_a1_g095-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-11-06 08:58:47
+(epstopdf)                    size: 7848 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a1_g095-eps-con
+verted-to.pdf images/e_1_a1_g095.eps>
+(epstopdf)             \includegraphics on input line 372.
+Package epstopdf Info: Output file is already uptodate.
+<images/e_1_a1_g095-eps-converted-to.pdf, id=43, 506.89375pt x 342.27875pt>
+File: images/e_1_a1_g095-eps-converted-to.pdf Graphic file (type pdf)
 
-<images/e_1_a_01_g_005.eps>
-File: images/e_01_a_01_g_005.eps Graphic file (type eps)
- <images/e_01_a_01_g_005.eps> [4]
-Missing character: There is no Å„ in font ptmr7t!
-Missing character: There is no Å„ in font ptmr7t!
+<use images/e_1_a1_g095-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a1_g095-eps-converted-to.pdf used on input 
+line 372.
+(pdftex.def)             Requested size: 105.69774pt x 71.36882pt.
+Package epstopdf Info: Source file: <images/e_01_a_1_g_095.eps>
+(epstopdf)                    date: 2017-05-22 12:36:02
+(epstopdf)                    size: 31002 bytes
+(epstopdf)             Output file: <images/e_01_a_1_g_095-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2017-11-06 08:58:47
+(epstopdf)                    size: 7822 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_1_g_095-eps-
+converted-to.pdf images/e_01_a_1_g_095.eps>
+(epstopdf)             \includegraphics on input line 377.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_1_g_095-eps-converted-to.pdf, id=44, 506.89375pt x 342.27875pt>
+File: images/e_01_a_1_g_095-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/e_01_a_1_g_095-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_1_g_095-eps-converted-to.pdf used on inp
+ut line 377.
+(pdftex.def)             Requested size: 105.69774pt x 71.36882pt.
+Package epstopdf Info: Source file: <images/e_1_a_01_g_005.eps>
+(epstopdf)                    date: 2017-05-22 12:35:49
+(epstopdf)                    size: 31080 bytes
+(epstopdf)             Output file: <images/e_1_a_01_g_005-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2017-11-06 08:58:48
+(epstopdf)                    size: 7826 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_1_a_01_g_005-eps-
+converted-to.pdf images/e_1_a_01_g_005.eps>
+(epstopdf)             \includegraphics on input line 382.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_1_a_01_g_005-eps-converted-to.pdf, id=45, 506.89375pt x 342.27875pt>
+File: images/e_1_a_01_g_005-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/e_1_a_01_g_005-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_1_a_01_g_005-eps-converted-to.pdf used on inp
+ut line 382.
+(pdftex.def)             Requested size: 105.69774pt x 71.36882pt.
+Package epstopdf Info: Source file: <images/e_01_a_01_g_005.eps>
+(epstopdf)                    date: 2017-05-22 12:35:43
+(epstopdf)                    size: 31059 bytes
+(epstopdf)             Output file: <images/e_01_a_01_g_005-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2017-11-06 08:58:49
+(epstopdf)                    size: 7770 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/e_01_a_01_g_005-eps
+-converted-to.pdf images/e_01_a_01_g_005.eps>
+(epstopdf)             \includegraphics on input line 387.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/e_01_a_01_g_005-eps-converted-to.pdf, id=46, 506.89375pt x 342.27875pt>
+File: images/e_01_a_01_g_005-eps-converted-to.pdf Graphic file (type pdf)
+<use images/e_01_a_01_g_005-eps-converted-to.pdf>
+Package pdftex.def Info: images/e_01_a_01_g_005-eps-converted-to.pdf used on in
+put line 387.
+(pdftex.def)             Requested size: 105.69774pt x 71.36882pt.
+ [4 <./images/ql_tuning_params_fixed_map_last_5000_iterations-eps-converted-to.
+pdf> <./images/alpha_vs_gamma_avg_tpt_sqrt_epsilon-eps-converted-to.pdf> <./ima
+ges/alpha_vs_gamma_std_sqrt_epsilon-eps-converted-to.pdf>]
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no „ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no „ in font ptmr7t!
 
 
 ** Conference Paper **
@@ -1154,7 +1441,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5]
+[5 <./images/e_1_a1_g095_ind_tpt-eps-converted-to.pdf> <./images/e_01_a_1_g_095
+_ind_tpt-eps-converted-to.pdf> <./images/e_1_a_01_g_005_ind_tpt-eps-converted-t
+o.pdf> <./images/e_01_a_01_g_005_ind_tpt-eps-converted-to.pdf> <./images/e_1_a1
+_g095_avg_tpt-eps-converted-to.pdf> <./images/e_01_a_1_g_095_avg_tpt-eps-conver
+ted-to.pdf> <./images/e_1_a_01_g_005_avg_tpt-eps-converted-to.pdf> <./images/e_
+01_a_01_g_005_avg_tpt-eps-converted-to.pdf> <./images/e_1_a1_g095-eps-converted
+-to.pdf> <./images/e_01_a_1_g_095-eps-converted-to.pdf> <./images/e_1_a_01_g_00
+5-eps-converted-to.pdf> <./images/e_01_a_01_g_005-eps-converted-to.pdf>]
 (./Implications of Decentralized Q-Learning Resource Allocation in Wireless Net
 works.aux)
 
@@ -1164,16 +1458,41 @@ LaTeX Warning: There were undefined references.
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
-### bottom level
-(\end occurred when \ifx on line 161 was incomplete) 
+### bottom level 
 Here is how much of TeX's memory you used:
- 17976 strings out of 493591
- 346955 string characters out of 6143546
- 389067 words of memory out of 5000000
- 21142 multiletter control sequences out of 15000+600000
- 33634 words of font info for 88 fonts, out of 8000000 for 9000
- 1347 hyphenation exceptions out of 8191
- 42i,24n,77p,10453b,3251s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18636 strings out of 493014
+ 358945 string characters out of 6133351
+ 409434 words of memory out of 5000000
+ 21902 multiletter control sequences out of 15000+600000
+ 46762 words of font info for 100 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,24n,77p,10453b,3546s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
+es/utmri8a.pfb>
+Output written on "Implications of Decentralized Q-Learning Resource Allocation
+ in Wireless Networks.pdf" (5 pages, 579497 bytes).
+PDF statistics:
+ 192 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on Implications of Decentralized Q-Learning Resource Allocation 
-in Wireless Networks.pdf (5 pages).
