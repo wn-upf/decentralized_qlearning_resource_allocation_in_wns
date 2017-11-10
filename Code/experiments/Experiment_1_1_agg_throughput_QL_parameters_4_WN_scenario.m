@@ -16,21 +16,22 @@ clc
 clear all
 
 % Add paths to methods folders
-addpath(genpath('Power Management Methods/'));
-addpath(genpath('Throughput Calculation Methods/'));
-addpath(genpath('Network Generation Methods/'));
-addpath(genpath('Reinforcement Learning Methods/'));
-addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
-addpath(genpath('Auxiliary Methods/'));
+addpath(genpath('framework_throughput_total_interference/'));
+addpath(genpath('framework_throughput_total_interference/power_management_methods/'));
+addpath(genpath('framework_throughput_total_interference/throughput_calculation_methods/'));
+addpath(genpath('framework_throughput_total_interference/network_generation_methods/'));
+addpath(genpath('framework_throughput_total_interference/auxiliary_methods/'));
+addpath(genpath('reinforcement_learning_methods/'));
+addpath(genpath('reinforcement_learning_methods/action_selection_methods/'));
 
 disp('****************************************************************************************');
 disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
 disp('* Copyright (C) 2017-2022, and GNU GPLd, by Francesc Wilhelmi                          *');
 disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Allocation_in_WNs *');
-disp('****************************************************************************************');
+disp('`****************************************************************************************');
 
 disp('-----------------------')
-disp('Q-learning: finding the best parameters')
+disp('EXPERIMENT 1-1: finding the best parameters (Q-learning)')
 disp('-----------------------')
 
 %% DEFINE THE VARIABLES TO BE USED
@@ -70,6 +71,8 @@ updateMode = 1;         % 0: epsilon = initial_epsilon / t ; 1: epsilon = epsilo
 gamma_epsilon_pairs = [.95 1; 0.5 1; .05 1; .95 .5; .5 .5; .05 .5];
 alpha = 0:.1:1;                 % Learning Rate
 
+printInfo = true;      % print info after implementing Q-learning
+
 % Setup the scenario: generate WLANs and initialize states and actions
 wlan = GenerateNetwork3D(n_WLANs, nChannels, 'grid', 2, 0); % SAFE CONFIGURATION
 %DrawNetwork3D(wlan)
@@ -93,15 +96,15 @@ for iter = 1:TOTAL_ROUNDS
     disp(['ROUND ' num2str(iter) '/' num2str(TOTAL_ROUNDS)])
     disp('------------------------------------')
 
-    for a = 1:size(alpha,2)
+    for a = 1 : size(alpha,2)
 
-        for g_e = 1:size(gamma_epsilon_pairs,1)
+        for g_e = 1 : size(gamma_epsilon_pairs,1)
 
             tpt_evolution_per_wlan_ql{iter}  = QlearningMethod(wlan, MAX_CONVERGENCE_TIME, MAX_LEARNING_ITERATIONS, ...
-                                            gamma_epsilon_pairs(g_e,1), gamma_epsilon_pairs(g_e,2), alpha(a), updateMode, ...
-                                            actions_ch, actions_cca, actions_tpc, noise);
-
-            for j=1:MAX_CONVERGENCE_TIME
+                                            gamma_epsilon_pairs(g_e, 1), gamma_epsilon_pairs(g_e, 2), alpha(a), updateMode, ...
+                                            actions_ch, actions_cca, actions_tpc, noise, printInfo);
+                                        
+            for j = 1 : MAX_CONVERGENCE_TIME
                 avg_tpt_evolution_ql{iter}(j) = mean(tpt_evolution_per_wlan_ql{iter}(j,:));
                 fairness_evolution{iter}(j) = JainsFairness(tpt_evolution_per_wlan_ql{iter}(j,:));
             end

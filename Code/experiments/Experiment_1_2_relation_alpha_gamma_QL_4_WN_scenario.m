@@ -14,12 +14,13 @@ clc
 clear all
 
 % Add paths to methods folders
-addpath(genpath('Power Management Methods/'));
-addpath(genpath('Throughput Calculation Methods/'));
-addpath(genpath('Network Generation Methods/'));
-addpath(genpath('Reinforcement Learning Methods/'));
-addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
-addpath(genpath('Auxiliary Methods/'));
+addpath(genpath('framework_throughput_total_interference/'));
+addpath(genpath('framework_throughput_total_interference/power_management_methods/'));
+addpath(genpath('framework_throughput_total_interference/throughput_calculation_methods/'));
+addpath(genpath('framework_throughput_total_interference/network_generation_methods/'));
+addpath(genpath('framework_throughput_total_interference/auxiliary_methods/'));
+addpath(genpath('reinforcement_learning_methods/'));
+addpath(genpath('reinforcement_learning_methods/action_selection_methods/'));
 
 disp('****************************************************************************************');
 disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
@@ -28,7 +29,7 @@ disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Alloc
 disp('****************************************************************************************');
 
 disp('-----------------------')
-disp('Q-leraning: alpha-gamma relation')
+disp('EXPERIMENT 1-2: Alpha vs Gamma performance (Q-learning)')
 disp('-----------------------')
 
 %% DEFINE THE VARIABLES TO BE USED
@@ -36,10 +37,10 @@ disp('-----------------------')
 % GLOBAL VARIABLES
 n_WLANs = 4;                    % Number of WLANs in the map
 n_agents = 4;                   % Number of WLANs implementing Q-learning
-MAX_CONVERGENCE_TIME = 100;
+MAX_CONVERGENCE_TIME = 10000;
 MIN_SAMPLE_CONSIDER = MAX_CONVERGENCE_TIME/2 + 1;
 MAX_LEARNING_ITERATIONS = 1;    % Maximum number of learning iterations done by each WLAN inside a general iteration
-TOTAL_ROUNDS = 10;              % Number of TOTAL repetitions to take the average
+TOTAL_ROUNDS = 100;             % Number of TOTAL repetitions to take the average
 plot_results = 0;               % To plot or not the results at the end of the simulation
 
 % WLAN object to be modified for each number of coexistent nodes
@@ -67,6 +68,8 @@ updateMode = 1;         % 0: epsilon = initial_epsilon / t ; 1: epsilon = epsilo
 gamma = 0:.1:1;         % Discount factor
 alpha = 0:.1:1;         % Learning Rate
 
+printInfo = false;      % print info after implementing Q-learning
+
 % Setup the scenario: generate WLANs and initialize states and actions
 wlan = GenerateNetwork3D(n_WLANs, nChannels, 'grid', 2, 0); % SAFE CONFIGURATION
 %DrawNetwork3D(wlan)
@@ -83,8 +86,10 @@ for iter = 1:TOTAL_ROUNDS
 
         for g = 1:size(gamma,2)
 
-            tpt_evolution_per_wlan_ql{iter}  = QlearningMethod(wlan, MAX_CONVERGENCE_TIME, MAX_LEARNING_ITERATIONS, ...
-                                            gamma(g), initial_epsilon, alpha(a), updateMode, actions_ch, actions_cca, actions_tpc, noise);
+            tpt_evolution_per_wlan_ql{iter}  = QlearningMethod(wlan,...
+                MAX_CONVERGENCE_TIME, MAX_LEARNING_ITERATIONS, gamma(g), ...
+                initial_epsilon, alpha(a), updateMode, actions_ch, ...
+                actions_cca, actions_tpc, noise, printInfo);
 
             for j=1:MAX_CONVERGENCE_TIME
                 avg_tpt_evolution_ql{iter}(j) = mean(tpt_evolution_per_wlan_ql{iter}(j,:));

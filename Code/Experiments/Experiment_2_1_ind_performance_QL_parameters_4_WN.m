@@ -16,12 +16,13 @@ clc
 clear all
 
 % Add paths to methods folders
-addpath(genpath('Power Management Methods/'));
-addpath(genpath('Throughput Calculation Methods/'));
-addpath(genpath('Network Generation Methods/'));
-addpath(genpath('Reinforcement Learning Methods/'));
-addpath(genpath('Reinforcement Learning Methods/Action Selection Methods/'));
-addpath(genpath('Auxiliary Methods/'));
+addpath(genpath('framework_throughput_total_interference/'));
+addpath(genpath('framework_throughput_total_interference/power_management_methods/'));
+addpath(genpath('framework_throughput_total_interference/throughput_calculation_methods/'));
+addpath(genpath('framework_throughput_total_interference/network_generation_methods/'));
+addpath(genpath('framework_throughput_total_interference/auxiliary_methods/'));
+addpath(genpath('reinforcement_learning_methods/'));
+addpath(genpath('reinforcement_learning_methods/action_selection_methods/'));
 
 disp('****************************************************************************************');
 disp('* Implications of Decentralized Learning Resource Allocation in WNs                    *');
@@ -30,7 +31,7 @@ disp('* GitHub: https://github.com/wn-upf/Decentralized_Qlearning_Resource_Alloc
 disp('****************************************************************************************');
 
 disp('-----------------------')
-disp('Q-learning: Throughput Evolution')
+disp('EXPERIMENT 2-1: Individual performance Q-learning')
 disp('-----------------------')
 
 %% DEFINE THE VARIABLES TO BE USED
@@ -64,7 +65,7 @@ possible_comb = allcomb(possible_actions,possible_actions,possible_actions,possi
 
 % Q-learning parameters
 gamma = .95;            % Discount rate
-initial_epsilon = .1;    % Initial Exploration coefficient
+initial_epsilon = .1;   % Initial Exploration coefficient
 updateMode = 1;         % 0: epsilon = initial_epsilon / t ; 1: epsilon = epsilon / sqrt(t)
 alpha  = 1;             % Learning rate
 
@@ -92,11 +93,11 @@ for i = 1:n_WLANs
     plot(MIN_SAMPLE_CONSIDER:MAX_CONVERGENCE_TIME, tpt_per_iteration);
     title(['WN ' num2str(i)]);
     set(gca, 'FontSize', 22)
+    set(gca, 'fontname', 'timesnewroman')
     axis([MIN_SAMPLE_CONSIDER-1 MAX_CONVERGENCE_TIME 0 1.1 * max(tpt_per_iteration)])
+    ylabel('Throughput', 'fontsize', 18)
+    xlabel('Q-learning iteration', 'fontsize', 18)
 end
-%xlabel('Q-learning Iteration', 'fontsize', 24)
-ylabel('Throughput experienced (Mbps)', 'fontsize', 24)
-set(gca, 'fontname', 'timesnewroman')
 
 % Aggregated throughput experienced for each QL iteration
 figure('pos',[450 400 500 350])
@@ -138,5 +139,5 @@ errorbar(mean_tpt_per_wlan,std_per_wlan, '.r');
 axis([0 5 0 350])
 set(gca, 'fontname', 'timesnewroman')
 
-
+%% Save the workspace
 save('ql_exp2_1_workspace.mat')
